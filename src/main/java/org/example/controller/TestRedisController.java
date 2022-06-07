@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @ClassName TestRedisController
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @Description:
  * @Version 1.0
  **/
-@Controller
+@RestController
 @RequestMapping("/redis")
 @Slf4j
 public class TestRedisController {
@@ -23,9 +24,10 @@ public class TestRedisController {
     private CacheService cacheService;
 
     @RequestMapping("/setKey")
-    public void setKey() {
+    public String setKey() {
         String value = "ryan";
         cacheService.add("name", value);
         log.info("redis设置成功");
+        return "redis设置成功";
     }
 }
