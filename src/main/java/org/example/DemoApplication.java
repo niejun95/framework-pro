@@ -10,7 +10,7 @@ import org.springframework.cache.annotation.EnableCaching;
  * @Description: 启动类
  * @date Date : 2022年06月06日 22:42
  **/
-@MapperScan("com.example.mapper") //扫描的mapper
+@MapperScan("org.example.mapper") //扫描的mapper
 @SpringBootApplication
 @EnableCaching
 public class DemoApplication {

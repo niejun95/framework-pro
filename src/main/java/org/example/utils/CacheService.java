@@ -3,7 +3,8 @@ package org.example.utils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
@@ -23,8 +24,10 @@ import java.util.concurrent.TimeUnit;
  * @Version 1.0
  **/
 @Component
-@Slf4j
 public class CacheService {
+
+    public static final Logger log = LogManager.getLogger(CacheService.class);
+
     @Autowired
     private StringRedisTemplate redisTemplate;
 

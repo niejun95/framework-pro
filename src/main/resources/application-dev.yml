@@ -31,11 +31,9 @@ mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml
   type-aliases-package: org.example.entities
 
-#showSql
-logging:
-  level:
-    com:
-      example:
-        mapper : debug
-
-
+##showSql
+#logging:
+#  level:
+#    com:
+#      example:
+#        mapper : debug
