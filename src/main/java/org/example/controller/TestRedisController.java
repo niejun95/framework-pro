@@ -36,10 +36,17 @@ public class TestRedisController {
 
     @RequestMapping("/setKey")
     public String setKey() {
-        String value = "ryan";
-        cacheService.add("name", value);
+        redisTemplate.opsForValue().set("value", "100");
         log.info("添加字符串到redis");
         return "添加字符串到redis";
+    }
+
+    @RequestMapping("/getKey")
+    public Long getKey() {
+        String value = redisTemplate.opsForValue().get("value");
+        Long result = Long.valueOf(value);
+        log.info("值为：" + result);
+        return result;
     }
 
     @RequestMapping("/addJsonString")
