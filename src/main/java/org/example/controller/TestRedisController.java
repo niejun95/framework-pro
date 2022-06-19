@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.example.entities.User;
 import org.example.utils.CacheService;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,7 +39,7 @@ public class TestRedisController {
     public String setKey() {
         redisTemplate.opsForValue().set("value", "100");
         log.info("添加字符串到redis");
-        return "添加字符串到redis";
+        return JSONObject.toJSONString("添加字符串到redis");
     }
 
     @RequestMapping("/getKey")
