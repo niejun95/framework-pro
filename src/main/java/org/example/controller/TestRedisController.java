@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
  * @ClassName TestRedisController
  * @Author niejun
  * @Date 2022/6/7
- * @Description:
+ * @Description: redis 测试
  * @Version 1.0
  **/
 @RestController

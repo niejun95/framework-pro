@@ -1,0 +1,41 @@
+package org.example.controller;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.example.entities.Account;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @ClassName TestOnlineExceptionController
+ * @Author niejun
+ * @Date 2022/6/21
+ * @Description:
+ * @Version 1.0
+ **/
+@RestController
+@RequestMapping("/exception")
+public class TestOnlineExceptionController {
+    public static final Logger log = LogManager.getLogger(TestOnlineExceptionController.class);
+
+
+    @RequestMapping("/cpuBoom")
+    public void oom() {
+        log.info("测试CPU boom");
+        while (true) {
+            Account account = new Account();
+        }
+    }
+
+    @RequestMapping("/stackoverflow")
+    public void sof() {
+        log.info("测试 stack over flow");
+        while (true) {
+            doNothing();
+        }
+    }
+
+    public void doNothing() {
+
+    }
+}

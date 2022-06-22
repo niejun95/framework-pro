@@ -1,5 +1,7 @@
 package org.example.entities;
 
+import java.util.Date;
+
 /**
  * @ClassName Account
  * @Author niejun
@@ -13,6 +15,8 @@ public class Account {
     private String name;
 
     private Integer money;
+
+    private Date createTime;
 
     public Account() {
     }
@@ -47,12 +51,21 @@ public class Account {
         this.money = money;
     }
 
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
     @Override
     public String toString() {
         return "Account{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", money=" + money +
+                ", createTime=" + createTime +
                 '}';
     }
 }

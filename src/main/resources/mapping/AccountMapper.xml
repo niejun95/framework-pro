@@ -6,10 +6,40 @@
         <result column="id" jdbcType="INTEGER" property="id" />
         <result column="name" jdbcType="VARCHAR" property="name" />
         <result column="money" jdbcType="VARCHAR" property="money" />
+        <result column="create_time" jdbcType="DATE" property="createTime"/>
     </resultMap>
+    <insert id="insertSingle" parameterType="org.example.entities.Account">
+        insert into account (id, name, money)
+        values
+        (#{id}, #{name}, #{money})
+
+    </insert>
+
+    <insert id="insertMany" parameterType="java.util.List">
+        insert into account (id, name, money)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.id}, #{item.name}, #{item.money})
+        </foreach>
+    </insert>
+
+    <update id="updateLocalDate">
+        update account
+        set create_time = #{date}
+
+    </update>
+
+    <update id="updateDate">
+        update account
+        set create_time = #{date}
+    </update>
 
     <select id="queryAccountInfoByName" resultType="org.example.entities.Account">
         select * from account where name = #{name}
+    </select>
+
+    <select id="queryAccountByTime" resultType="org.example.entities.Account">
+        <![CDATA[ select * from account where create_time < #{date} ]]>
     </select>
 
 
