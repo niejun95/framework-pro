@@ -88,4 +88,14 @@ public class TestRedisController {
         cacheService.addHashCache("hashKey", "key", "value");
         return "添加hash-set";
     }
+
+    @RequestMapping("/testErr")
+    public void testErr() {
+        redisTemplate.opsForValue().set("ryan", "1", 48L, TimeUnit.HOURS);
+    }
+
+    @RequestMapping("/testErrIncr")
+    public void testErrIncr() {
+        redisTemplate.opsForValue().increment("ryan", 1L);
+    }
 }

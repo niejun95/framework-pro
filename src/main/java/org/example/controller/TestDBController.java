@@ -1,7 +1,6 @@
 package org.example.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.zaxxer.hikari.HikariDataSource;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.example.entities.Account;
@@ -39,9 +38,6 @@ public class TestDBController {
 
     @Autowired
     private AccountMapper accountMapper;
-
-    @Autowired
-    private HikariDataSource hikariDataSource;
 
     @RequestMapping("/userQ/{name}")
     public String queryUserInfoByName(@PathVariable String name) {
