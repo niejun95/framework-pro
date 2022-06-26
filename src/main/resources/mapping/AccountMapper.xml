@@ -34,6 +34,11 @@
         set create_time = #{date}
     </update>
 
+    <delete id="deleteAccount">
+        delete from account
+        where id = #{id}
+    </delete>
+
     <select id="queryAccountInfoByName" resultType="org.example.entities.Account">
         select * from account where name = #{name}
     </select>

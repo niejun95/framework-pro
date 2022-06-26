@@ -93,4 +93,10 @@ public class TestDBController {
         log.info("many insert 结束时间戳：" + endTime);
         log.info("总耗时:" + (endTime - startTime));
     }
+
+    @RequestMapping("/deleteForDruidSQlWall")
+    public Object delete() {
+        log.info("测试 SQL 防火墙，配置了不允许删除");
+        return accountMapper.deleteAccount(2);
+    }
 }
