@@ -1,5 +1,7 @@
 package org.example.entities;
 
+import java.io.Serializable;
+
 /**
  * @ClassName User
  * @Author niejun
@@ -7,7 +9,7 @@ package org.example.entities;
  * @Description:
  * @Version 1.0
  **/
-public class User {
+public class User implements Serializable {
 
     private Integer id;
 
