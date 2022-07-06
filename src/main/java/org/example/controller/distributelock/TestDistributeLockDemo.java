@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.redisson.Redisson;
 import org.redisson.api.RLock;
+import org.redisson.api.RReadWriteLock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -74,6 +75,27 @@ public class TestDistributeLockDemo {
             }
         } finally {
             lock.unlock();
+        }
+    }
+
+    @RequestMapping("decrementStockByRedissonPro")
+    public void decrementStockByRedissonPro() {
+        // 优化 redisson 分布式锁 使用读写锁
+        String lockKey = "product_101";
+        RReadWriteLock readWriteLock = redisson.getReadWriteLock(lockKey);
+        RLock writeLock = readWriteLock.writeLock();
+        try {
+            writeLock.lock();
+            int stock  = Integer.parseInt(redisTemplate.opsForValue().get("stock"));
+            if (stock > 0) {
+                int realStock = stock - 1;
+                redisTemplate.opsForValue().set("stock", realStock + "");
+                log.info("扣减成功，剩余库存：{}", realStock);
+            } else {
+                log.info("扣减失败，库存不足");
+            }
+        } finally {
+            writeLock.unlock();
         }
     }
 
