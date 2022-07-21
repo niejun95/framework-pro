@@ -3,12 +3,14 @@ package org.example.controller.distributelock;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.redisson.Redisson;
+import org.redisson.RedissonLock;
 import org.redisson.api.RLock;
 import org.redisson.api.RReadWriteLock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import redis.clients.jedis.Jedis;
 
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
@@ -36,7 +38,6 @@ public class TestDistributeLockDemo {
         String lockKey = "product_101";
         String clientId = UUID.randomUUID().toString();
         Boolean result = redisTemplate.opsForValue().setIfAbsent(lockKey, clientId, 30, TimeUnit.SECONDS);
-
         if (!result) {
             log.info("加锁失败");
             return ;
@@ -61,8 +62,10 @@ public class TestDistributeLockDemo {
 
     @RequestMapping("/decrementStockByRedisson")
     public void decrementStockByRedisson() {
+        log.info("当前实例地址 {}", this);
+        log.info("当前线程id {}", Thread.currentThread().getName());
         String lockKey = "product_101";
-        RLock lock = redisson.getLock(lockKey);
+        RLock lock =  redisson.getLock(lockKey);
         try {
             lock.lock();
             int stock  = Integer.parseInt(redisTemplate.opsForValue().get("stock"));
@@ -73,9 +76,15 @@ public class TestDistributeLockDemo {
             } else {
                 log.info("扣减失败，库存不足");
             }
+            try {
+                Thread.sleep(20000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         } finally {
             lock.unlock();
         }
+        log.info("结束了");
     }
 
     @RequestMapping("decrementStockByRedissonPro")

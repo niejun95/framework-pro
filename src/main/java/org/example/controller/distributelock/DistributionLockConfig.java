@@ -26,8 +26,10 @@ public class DistributionLockConfig {
          *      -1或者未设置 从 config 中读取
          * 2、config 中也可以配置看门狗超时续命时间
          * 3、加锁和 config 都没有设置 默认时间为30s
+         *
+         * 到了 lockWatchdogTimeout 的1/3时候进行检查，没执行完重新设置过期时间为 lockWatchdogTimeout
          */
-        config.setLockWatchdogTimeout(1000L);
+        config.setLockWatchdogTimeout(10000L);
         return (Redisson) Redisson.create(config);
     }
 

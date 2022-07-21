@@ -14,7 +14,6 @@ import org.springframework.context.ConfigurableApplicationContext;
  **/
 @MapperScan("org.example.mapper") //扫描的mapper
 @SpringBootApplication
-@EnableCaching
 public class DemoApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(DemoApplication.class, args);
