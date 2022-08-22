@@ -47,5 +47,17 @@
         <![CDATA[ select * from account where create_time < #{date} ]]>
     </select>
 
+    <update id="testIf" parameterType="org.example.entities.Account">
+        update account
+        <if test="id != null">
+            set name = 'ryan'
+        </if>
+        <if test="id == null">
+            set name = 'ryan1'
+        </if>
+        where id = 1
+    </update>
+
+
 
 </mapper>

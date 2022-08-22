@@ -99,4 +99,11 @@ public class TestDBController {
         log.info("测试 SQL 防火墙，配置了不允许删除");
         return accountMapper.deleteAccount(2);
     }
+
+    @RequestMapping("/testIf")
+    public void testIf(){
+        Account account1 = new Account();
+        account1.setId(456);
+        accountMapper.testIf(account1);
+    }
 }
