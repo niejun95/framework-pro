@@ -24,4 +24,6 @@ public interface AccountMapper {
     void insertMany(List<Account> list);
 
     int deleteAccount(int id);
+
+    void testIf(Account account);
 }
