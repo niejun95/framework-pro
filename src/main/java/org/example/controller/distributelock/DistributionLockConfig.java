@@ -19,7 +19,7 @@ public class DistributionLockConfig {
     public Redisson redisson() {
         // 此为单机模式
         Config config = new Config();
-        config.useSingleServer().setAddress("redis://116.62.186.162:6379").setDatabase(0);
+        config.useSingleServer().setAddress("redis://43.143.1.90:6379").setDatabase(0);
         /**
          * 看门狗机制的续命时间设置：
          * 1、加锁时设置了过期时间，那么 Redisson 不会给你开启看门狗的机制
