@@ -6,12 +6,14 @@ import org.apache.logging.log4j.Logger;
 import org.example.entities.Account;
 import org.example.mapper.AccountMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -42,7 +44,11 @@ public class TestDBController {
     @RequestMapping("/userQ/{name}")
     public String queryUserInfoByName(@PathVariable String name) {
         log.info("name=" + name);
-        Account account = accountMapper.queryAccountInfoByName(name);
+//        Account account = accountMapper.queryAccountInfoByName(name);
+        Account account = accountMapper.queryAccountInfoByNameForResultMap(name);
+        String lowIncomeFlag = account.getLowIncomeFlag();
+        System.out.println("lowIncomeFlag 是否为空呢？" + Objects.isNull(lowIncomeFlag));
+        log.info("结果：{}", account);
         return JSONObject.toJSONString(account);
     }
 
@@ -51,7 +57,7 @@ public class TestDBController {
     public void batchInsert() {
         long startTime = System.currentTimeMillis();
         log.info("批量插入 开始时间戳：" + startTime);
-        for (int i = 200; i < 250; i++) {
+        for (int i = 200; i < 210; i++) {
             BatchInsertThread thread = new BatchInsertThread(i, accountMapper);
             executors.submit(thread);
         }

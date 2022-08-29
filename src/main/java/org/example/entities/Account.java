@@ -18,6 +18,8 @@ public class Account {
 
     private Date createTime;
 
+    private String lowIncomeFlag;
+
     public Account() {
     }
 
@@ -59,6 +61,14 @@ public class Account {
         this.createTime = createTime;
     }
 
+    public String getLowIncomeFlag() {
+        return lowIncomeFlag;
+    }
+
+    public void setLowIncomeFlag(String lowIncomeFlag) {
+        this.lowIncomeFlag = lowIncomeFlag;
+    }
+
     @Override
     public String toString() {
         return "Account{" +
@@ -66,6 +76,7 @@ public class Account {
                 ", name='" + name + '\'' +
                 ", money=" + money +
                 ", createTime=" + createTime +
+                ", lowIncomeFlag='" + lowIncomeFlag + '\'' +
                 '}';
     }
 }

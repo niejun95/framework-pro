@@ -26,4 +26,6 @@ public interface AccountMapper {
     int deleteAccount(int id);
 
     void testIf(Account account);
+
+    Account queryAccountInfoByNameForResultMap(String name);
 }
