@@ -1,6 +1,7 @@
 package org.example.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.example.entities.AnotherUser;
 import org.example.entities.User;
 import org.springframework.stereotype.Repository;
@@ -13,4 +14,8 @@ import java.util.Map;
 @Repository
 public interface UserMapper {
     List<AnotherUser> queryUserByCreateTime(Map map);
+
+    int insertNewUser(@Param("requestParam") Map requestParam);
+
+    Date queryGmtCreateTime();
 }

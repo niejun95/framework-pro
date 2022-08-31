@@ -84,6 +84,28 @@ public class TestDateTimeController {
         log.info("结果：{}", userList.size());
     }
 
+    @RequestMapping("/createNewUser/{time}")
+    public void createUser(@PathVariable String time) {
+        log.info("时间：" + time);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = null;
+        try {
+            date = sdf.parse(time);
+            Map<String, Object> requestParam = new HashMap<>();
+            requestParam.put("name", "123");
+            requestParam.put("gmtCreate", date);
+            requestParam.put("gmtModified", date);
+            userMapper.insertNewUser(requestParam);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @RequestMapping("/getCreateTime")
+    public void getCreateTime() {
+        Date date = userMapper.queryGmtCreateTime();
+        log.info("查询到的创建时间为：{}", date);
+    }
 
 
 
