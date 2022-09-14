@@ -26,6 +26,13 @@ public class TestReadPropertiesController {
 
     @RequestMapping("/read")
     public void readProperties() {
+//        System.out.println(ref);
+//        List<String> list = new ArrayList<String>();
+//        String[] arrs = ref.split(",");
+//        for (String arr : arrs) {
+//            list.add(arr);
+//        }
+//        System.out.println(list.size());
         System.out.println(ref);
         System.out.println(whiteList);
 
