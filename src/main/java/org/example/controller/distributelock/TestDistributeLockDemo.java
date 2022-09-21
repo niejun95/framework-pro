@@ -64,6 +64,7 @@ public class TestDistributeLockDemo {
     public void decrementStockByRedisson() {
         log.info("当前实例地址 {}", this);
         log.info("当前线程id {}", Thread.currentThread().getName());
+        // redis 查询加锁的信息 hgetall product_101
         String lockKey = "product_101";
         RLock lock =  redisson.getLock(lockKey);
         try {
