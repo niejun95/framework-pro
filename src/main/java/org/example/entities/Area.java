@@ -2,7 +2,7 @@ package org.example.entities;
 
 /**
  * @author : niejun
- * @Description: TODO
+ * @Description: Area
  * @date Date : 2022年06月30日 22:04
  **/
 public class Area {

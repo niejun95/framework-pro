@@ -6,7 +6,7 @@ import java.util.Date;
  * @ClassName: AnotherUser
  * @Author: niejun
  * @CreateTime: 2022-07-28  10:14
- * @Description: TODO
+ * @Description: AnotherUser
  * @Version: 1.0
  */
 public class AnotherUser {
