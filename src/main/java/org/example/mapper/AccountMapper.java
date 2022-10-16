@@ -27,5 +27,7 @@ public interface AccountMapper {
 
     void testIf(Account account);
 
+    int updateName(String name);
+
     Account queryAccountInfoByNameForResultMap(String name);
 }

@@ -33,6 +33,7 @@
     <update id="updateDate">
         update account
         set create_time = #{date}
+        where id = 300
     </update>
 
     <delete id="deleteAccount">
@@ -69,6 +70,11 @@
         where id = 1
     </update>
 
+    <update id="updateName" parameterType="java.lang.String">
+        update account
+        set name = #{name}
+        where id = 2
+    </update>
 
 
 </mapper>

@@ -2,6 +2,9 @@ server:
   port: 2888
 
 spring:
+  aop:
+    proxy-target-class: false # springboot 默认使用cglib进行动态代理 设置为 false 使用jdk动态代理
+
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
