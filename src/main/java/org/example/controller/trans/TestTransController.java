@@ -1,5 +1,6 @@
 package org.example.controller.trans;
 
+import org.example.controller.trans.service.TransService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +21,7 @@ public class TestTransController {
 
     @RequestMapping("/test")
     public void test() {
-        transTest.updateCreateTime();
+        transTest.updateData();
     }
 
 }

@@ -1,4 +1,4 @@
-package org.example.controller.trans;
+package org.example.controller.trans.service;
 
 /**
  * @author : niejun
@@ -6,7 +6,5 @@ package org.example.controller.trans;
  * @date : 2022年10月16日 11:07
  **/
 public interface TransService {
-    public void updateCreateTime();
-
-    public void updateName();
+    public void updateData();
 }
