@@ -25,10 +25,10 @@ public class TransServiceImpl implements TransService{
     @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRED)
     public void updateData() {
         try {
-            transCreateTime.updateCreateTime();
             transName.updateName();
         } catch (Exception e) {
             e.printStackTrace();
         }
+        transCreateTime.updateCreateTime();
     }
 }
