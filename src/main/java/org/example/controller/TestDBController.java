@@ -112,4 +112,16 @@ public class TestDBController {
         account1.setId(456);
         accountMapper.testIf(account1);
     }
+
+    @RequestMapping("/cache/{name}")
+    public String queryUserInfoByName1(@PathVariable String name) {
+        log.info("name=" + name);
+        Account account = accountMapper.queryAccountInfoByName(name);
+        log.info("结果：{}", account);
+
+        Account account1 = accountMapper.queryAccountInfoByName(name);
+        log.info("结果1：{}", account1);
+
+        return JSONObject.toJSONString(account);
+    }
 }
