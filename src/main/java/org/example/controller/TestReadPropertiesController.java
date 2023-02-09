@@ -15,13 +15,13 @@ import java.util.List;
  * @Version: 1.0
  */
 @RestController
-@PropertySource(value = {"config.properties", "sql.properties"})
+//@PropertySource(value = {"config.properties", "sql.properties"})
 public class TestReadPropertiesController {
 
-    @Value("#{'${data.list}'.split(',')}")
+//    @Value("#{'${}'.split(',')}")
     private List<String> ref;
 
-    @Value("#{'${data.white.list}'.split(',')}")
+//    @Value("#{'${data.white.list}'.split(',')}")
     private List<String> whiteList;
 
     @RequestMapping("/read")
