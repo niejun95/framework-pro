@@ -30,4 +30,6 @@ public interface AccountMapper {
     int updateName(String name);
 
     Account queryAccountInfoByNameForResultMap(String name);
+
+    List<Account> queryAll();
 }

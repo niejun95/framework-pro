@@ -20,6 +20,7 @@
         <result column="create_time" jdbcType="DATE" property="createTime"/>
         <result column="low_income_flag" jdbcType="VARCHAR" property="lowIncomeFlag"/>
     </resultMap>
+
     <insert id="insertSingle" parameterType="org.example.entities.Account">
         insert into account (id, name, money)
         values
@@ -87,5 +88,13 @@
         where id = 2
     </update>
 
+    <select id="queryAll" resultType="org.example.entities.Account">
+        select id as id,
+               name as name,
+               money as money,
+               create_time as createTime,
+               low_income_flag as lowIncomeFlag
+        from account
+    </select>
 
 </mapper>

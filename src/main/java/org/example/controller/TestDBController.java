@@ -5,8 +5,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.example.entities.Account;
 import org.example.mapper.AccountMapper;
+import org.example.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,11 +41,14 @@ public class TestDBController {
     @Autowired
     private AccountMapper accountMapper;
 
+    @Autowired
+    private AccountService accountService;
+
     @RequestMapping("/userQ/{name}")
     public String queryUserInfoByName(@PathVariable String name) {
         log.info("name=" + name);
-//        Account account = accountMapper.queryAccountInfoByName(name);
-        Account account = accountMapper.queryAccountInfoByNameForResultMap(name);
+        Account account = accountMapper.queryAccountInfoByName(name);
+        //Account account = accountService.queryAccountInfoByNameForResultMap(name);
         String lowIncomeFlag = account.getLowIncomeFlag();
         System.out.println("lowIncomeFlag 是否为空呢？" + Objects.isNull(lowIncomeFlag));
         log.info("结果：{}", account);
