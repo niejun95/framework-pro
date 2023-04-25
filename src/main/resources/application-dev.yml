@@ -26,6 +26,7 @@ spring:
       test-on-return: false # 归还连接前是否需要进行测试
       pool-prepared-statements: false # 不缓存PSTMT
       max-pool-prepared-statement-per-connection-size: 20 # 配置PSTMT缓存个数
+      filters: stat, log4j2
       filter:
         stat:
           enabled: true
@@ -33,9 +34,10 @@ spring:
           log-slow-sql: true
           slow-sql-millis: 2000
         wall:
-          enabled: true
+          enabled: false
         log4j2:
           enabled: true
+
 
 
   redis:

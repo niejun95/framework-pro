@@ -89,12 +89,22 @@
     </update>
 
     <select id="queryAll" resultType="org.example.entities.Account">
-        select id as id,
-               name as name,
-               money as money,
-               create_time as createTime,
+        select id              as id,
+               name            as name,
+               money           as money,
+               create_time     as createTime,
                low_income_flag as lowIncomeFlag
         from account
     </select>
 
+    <select id="queryByPhone" resultType="org.example.entities.Account">
+        select id              as id,
+               name            as name,
+               money           as money,
+               create_time     as createTime,
+               low_income_flag as lowIncomeFlag,
+               phone           as phone
+        from account
+        where phone = #{phone}
+    </select>
 </mapper>

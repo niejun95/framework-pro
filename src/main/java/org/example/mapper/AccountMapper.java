@@ -32,4 +32,6 @@ public interface AccountMapper {
     Account queryAccountInfoByNameForResultMap(String name);
 
     List<Account> queryAll();
+
+    Account queryByPhone(String phone);
 }

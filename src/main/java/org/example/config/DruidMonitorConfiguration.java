@@ -89,7 +89,7 @@ public class DruidMonitorConfiguration {
         // 允许进行多个 Statement操作（批处理）
         wc.setMultiStatementAllow(true);
         // 不允许执行删除
-        wc.setDeleteAllow(false);
+        wc.setDeleteAllow(true);
         return wc;
     }
 
