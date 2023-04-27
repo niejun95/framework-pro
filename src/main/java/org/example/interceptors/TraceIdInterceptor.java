@@ -1,4 +1,4 @@
-package org.example.config;
+package org.example.interceptors;
 
 import org.slf4j.MDC;
 import org.springframework.lang.Nullable;
@@ -15,7 +15,7 @@ import java.util.UUID;
  * @ClassName TraceIdInterceptor
  * @Author niejun
  * @Date 2022/6/15
- * @Description:
+ * @Description: 日志全局跟踪号
  * @Version 1.0
  **/
 @Component

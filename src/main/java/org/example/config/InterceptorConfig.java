@@ -1,5 +1,7 @@
 package org.example.config;
 
+import org.example.interceptors.RequestBodyLogInterceptor;
+import org.example.interceptors.TraceIdInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -17,6 +19,8 @@ public class InterceptorConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new TraceIdInterceptor());
+        registry.addInterceptor(new RequestBodyLogInterceptor())
+                .addPathPatterns("/**");
     }
 
 }
