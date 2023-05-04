@@ -17,7 +17,7 @@ public class ValidUser {
 
     @NotEmpty(message = "登录账户不能为空")
     @Length(min = 5, max = 16, message = "账号长度为5-16位")
-    @Pattern(regexp = "^[A-Za-z0-9]+$]", message = "账号格式为数字以及字母")
+    @Pattern(regexp = "^[A-Za-z0-9]+$", message = "账号格式为数字以及字母")
     private String username;
 
 
