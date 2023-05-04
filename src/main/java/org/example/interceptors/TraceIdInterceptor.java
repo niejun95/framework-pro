@@ -1,9 +1,9 @@
 package org.example.interceptors;
 
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.MDC;
 import org.springframework.lang.Nullable;
-import org.springframework.stereotype.Component;
-import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,27 +13,26 @@ import java.util.UUID;
 
 /**
  * @ClassName TraceIdInterceptor
- * @Author niejun
+ * @Author ryan
  * @Date 2022/6/15
  * @Description: 日志全局跟踪号
  * @Version 1.0
  **/
-@Component
-public class TraceIdInterceptor extends HandlerInterceptorAdapter {
+public class TraceIdInterceptor implements HandlerInterceptor {
     private static final String TRACE_ID = "TRACE_ID";
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 
-    @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
+
+    public boolean preHandle(@NotNull HttpServletRequest request, @NotNull HttpServletResponse response, @NotNull Object handler)
+            throws Exception {
         Date date = new Date();
         String timePrefix = sdf.format(date);
-        MDC.put(TRACE_ID, timePrefix + UUID.randomUUID().toString().substring(0,3));
+        MDC.put(TRACE_ID, timePrefix + UUID.randomUUID().toString().substring(0, 3));
         return true;
     }
 
-    @Override
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception {
+    public void afterCompletion(@NotNull HttpServletRequest request, @NotNull HttpServletResponse response, @NotNull Object handler, @Nullable Exception ex) throws Exception {
         MDC.clear();
     }
 
