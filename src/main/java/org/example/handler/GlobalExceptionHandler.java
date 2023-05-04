@@ -29,7 +29,7 @@ public class GlobalExceptionHandler {
     @ResponseBody
     @ExceptionHandler(value = MissingServletRequestParameterException.class)
     public CommonResult missingServletRequestParameterExceptionHandler(HttpServletRequest request, MissingServletRequestParameterException exception) {
-        log.error("[MissingServletRequestParameterExceptionHandler]", exception);
+        log.error("[missingServletRequestParameterExceptionHandler]", exception);
         return CommonResult.error(ServiceExceptionEnum.MISSING_REQUEST_PARAM_ERROR.getCode(), ServiceExceptionEnum.MISSING_REQUEST_PARAM_ERROR.getMessage());
     }
 
