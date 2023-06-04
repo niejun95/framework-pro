@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @description:
- * @author: ryan
+ * @description
+ * @author ryan
  * @date 2023/4/25 13:42
- * @version: 1.0
+ * @version 1.0
  */
 @RestController
 @RequestMapping("/auth")

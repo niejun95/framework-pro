@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.constraints.Min;
 
 /**
- * @description: 参数校验
- * @author: ryan
+ * @description 参数校验
+ * @author ryan
  * @date 2023/5/4 10:00
- * @version: 1.0
+ * @version 1.0
  */
 @RestController
 @RequestMapping("/valid")

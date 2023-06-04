@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * @ClassName: TestReadController
- * @Author: ryan
+ * @className: TestReadController
+ * @author ryan
  * @CreateTime: 2022-08-31  22:27
- * @Description: 读取 配置文件中 信息
- * @Version: 1.0
+ * @description 读取 配置文件中 信息
+ * @version 1.0
  */
 @RestController
 @PropertySource(value = {"config.properties", "sql.properties"})

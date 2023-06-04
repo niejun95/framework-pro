@@ -4,10 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
- * @description: 异常枚举
- * @author: ryan
+ * @description 异常枚举
+ * @author ryan
  * @date 2023/4/27 10:25
- * @version: 1.0
+ * @version 1.0
  */
 @Getter
 @AllArgsConstructor

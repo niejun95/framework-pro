@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @description: 服务降级
- * @author: ryan
+ * @description 服务降级
+ * @author ryan
  * @date 2023/5/6 10:17
- * @version: 1.0
+ * @version 1.0
  */
 @RestController
 @RequestMapping("/degrade")

@@ -7,10 +7,10 @@ import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.core.type.AnnotationMetadata;
 
 /**
- * @description: ImportBeanDefinitionRegistrar 注册 bean
- * @author: ryan
+ * @description ImportBeanDefinitionRegistrar 注册 bean
+ * @author ryan
  * @date 2023/5/9 14:23
- * @version: 1.0
+ * @version 1.0
  */
 public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
 

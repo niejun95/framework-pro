@@ -10,10 +10,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
 /**
- * @description: cookie 工具类
- * @author: ryan
+ * @description cookie 工具类
+ * @author ryan
  * @date 2023/4/25 14:34
- * @version: 1.0
+ * @version 1.0
  */
 @Slf4j
 public class CookieUtil {

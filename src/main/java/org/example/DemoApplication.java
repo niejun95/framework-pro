@@ -9,7 +9,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
  * @author : niejun
- * @Description: 启动类
+ * @description 启动类
  * @date Date : 2022年06月06日 22:42
  **/
 @MapperScan("org.example.mapper") //扫描的mapper

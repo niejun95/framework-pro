@@ -4,11 +4,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @ClassName: CharSwitchUtil
- * @Author: ryan
+ * @className: CharSwitchUtil
+ * @author ryan
  * @CreateTime: 2023-02-08  13:26
- * @Description: TODO
- * @Version: 1.0
+ * @description TODO
+ * @version 1.0
  */
 public class CharSwitchUtil {
     public static void main(String[] args) {

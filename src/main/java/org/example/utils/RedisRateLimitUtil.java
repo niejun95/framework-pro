@@ -16,11 +16,11 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @ClassName: RedisRateLimitUtil
- * @Author: ryan
+ * @className: RedisRateLimitUtil
+ * @author ryan
  * @CreateTime: 2022-08-16  10:49
- * @Description: 限流工具类
- * @Version: 1.0
+ * @description 限流工具类
+ * @version 1.0
  */
 @Component
 public class RedisRateLimitUtil {

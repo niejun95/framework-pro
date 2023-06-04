@@ -4,11 +4,11 @@ import org.example.entities.Account;
 import org.example.mapper.AccountMapper;
 
 /**
- * @ClassName BatchInsertThread
- * @Author niejun
- * @Date 2022/6/21
- * @Description:
- * @Version 1.0
+ * @className BatchInsertThread
+ * @author niejun
+ * @date 2022/6/21
+ * @description
+ * @version 1.0
  **/
 public class BatchInsertThread implements Runnable{
 

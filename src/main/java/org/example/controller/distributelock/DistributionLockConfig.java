@@ -6,11 +6,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @ClassName DistributionLockConfig
- * @Author niejun
- * @Date 2022/6/30
- * @Description:
- * @Version 1.0
+ * @className DistributionLockConfig
+ * @author niejun
+ * @date 2022/6/30
+ * @description
+ * @version 1.0
  **/
 @Configuration
 public class DistributionLockConfig {

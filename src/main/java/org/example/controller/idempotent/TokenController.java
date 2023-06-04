@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author : niejun
- * @Description: token 幂等测试 controller 类
+ * @description token 幂等测试 controller 类
  * @date Date : 2022年08月07日 15:26
  **/
 @RestController

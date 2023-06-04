@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 /**
- * @ClassName: SelfInterceptor
- * @Author: ryan
+ * @className: SelfInterceptor
+ * @author ryan
  * @CreateTime: 2022-10-19  16:00
- * @Description: 请求报文打印拦截器
- * @Version: 1.0
+ * @description 请求报文打印拦截器
+ * @version 1.0
  */
 public class RequestBodyLogInterceptor implements HandlerInterceptor {
     public static final Logger log = LogManager.getLogger(RequestBodyLogInterceptor.class);

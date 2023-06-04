@@ -19,10 +19,10 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
- * @description: jwt 工具类
- * @author: ryan
+ * @description jwt 工具类
+ * @author ryan
  * @date 2023/4/25 10:45
- * @version: 1.0
+ * @version 1.0
  */
 @Component
 public class TokenManager {

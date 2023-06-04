@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @ClassName TestOnlineExceptionController
- * @Author niejun
- * @Date 2022/6/21
- * @Description:
- * @Version 1.0
+ * @className TestOnlineExceptionController
+ * @author niejun
+ * @date 2022/6/21
+ * @description
+ * @version 1.0
  **/
 @RestController
 @RequestMapping("/exception")

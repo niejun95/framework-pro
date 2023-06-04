@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @ClassName: PreventTest
- * @Author: ryan
+ * @className: PreventTest
+ * @author ryan
  * @CreateTime: 2022-10-10  13:46
- * @Description: 防刷测试
- * @Version: 1.0
+ * @description 防刷测试
+ * @version 1.0
  */
 @RestController
 @RequestMapping("/prevent")

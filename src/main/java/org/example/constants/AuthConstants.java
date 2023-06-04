@@ -1,10 +1,10 @@
 package org.example.constants;
 
 /**
- * @description: 登录功能常量
- * @author: ryan
+ * @description 登录功能常量
+ * @author ryan
  * @date 2023/4/25 9:35
- * @version: 1.0
+ * @version 1.0
  */
 public class AuthConstants {
     // 短信验证码发送时间间隔限制

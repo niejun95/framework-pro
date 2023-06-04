@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @ClassName TestVisitCacheController
- * @Author niejun
- * @Date 2022/6/29
- * @Description: 访问人数、次数统计
- * @Version 1.0
+ * @className TestVisitCacheController
+ * @author niejun
+ * @date 2022/6/29
+ * @description 访问人数、次数统计
+ * @version 1.0
  **/
 @RestController
 @RequestMapping("/visit")

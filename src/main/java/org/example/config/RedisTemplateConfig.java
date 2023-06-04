@@ -9,11 +9,11 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
- * @ClassName RedisTemplateConfig
- * @Author niejun
- * @Date 2022/7/7
- * @Description: RedisTemplate 序列化器配置
- * @Version 1.0
+ * @className RedisTemplateConfig
+ * @author niejun
+ * @date 2022/7/7
+ * @description RedisTemplate 序列化器配置
+ * @version 1.0
  **/
 @Configuration
 public class RedisTemplateConfig {

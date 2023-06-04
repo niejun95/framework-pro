@@ -7,11 +7,11 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * @ClassName: TransNameImpl
- * @Author: ryan
+ * @className: TransNameImpl
+ * @author ryan
  * @CreateTime: 2022-10-17  13:54
- * @Description: TODO
- * @Version: 1.0
+ * @description TODO
+ * @version 1.0
  */
 @Service
 public class TransNameImpl implements TransName{

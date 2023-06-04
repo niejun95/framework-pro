@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * @author : niejun
- * @Description: 树形结构 数据库查询
+ * @description 树形结构 数据库查询
  * @date Date : 2022年06月30日 22:03
  **/
 @RequestMapping

@@ -3,11 +3,11 @@ package org.example.entities;
 import java.io.Serializable;
 
 /**
- * @ClassName User
- * @Author niejun
- * @Date 2022/6/7
- * @Description:
- * @Version 1.0
+ * @className User
+ * @author niejun
+ * @date 2022/6/7
+ * @description
+ * @version 1.0
  **/
 public class User implements Serializable {
 

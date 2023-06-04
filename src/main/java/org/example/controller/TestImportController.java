@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
- * @description: import 方式导入bean
- * @author: ryan
+ * @description import 方式导入bean
+ * @author ryan
  * @date 2023/5/9 14:08
- * @version: 1.0
+ * @version 1.0
  */
 @RestController
 @RequestMapping("/import")

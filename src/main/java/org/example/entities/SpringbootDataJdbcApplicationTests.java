@@ -10,11 +10,11 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
- * @ClassName SpringbootDataJdbcApplicationTests
- * @Author niejun
- * @Date 2022/6/24
- * @Description:
- * @Version 1.0
+ * @className SpringbootDataJdbcApplicationTests
+ * @author niejun
+ * @date 2022/6/24
+ * @description
+ * @version 1.0
  **/
 @SpringBootTest
 public class SpringbootDataJdbcApplicationTests {

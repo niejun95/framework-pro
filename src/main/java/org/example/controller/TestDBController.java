@@ -19,11 +19,11 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @ClassName TestDBController
- * @Author niejun
- * @Date 2022/6/15
- * @Description: 数据库 测试
- * @Version 1.0
+ * @className TestDBController
+ * @author niejun
+ * @date 2022/6/15
+ * @description 数据库 测试
+ * @version 1.0
  **/
 @RestController
 @RequestMapping("/db")

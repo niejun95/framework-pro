@@ -17,11 +17,11 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @ClassName CacheService
- * @Author niejun
- * @Date 2022/6/7
- * @Description:
- * @Version 1.0
+ * @className CacheService
+ * @author niejun
+ * @date 2022/6/7
+ * @description
+ * @version 1.0
  **/
 @Component
 public class CacheService {

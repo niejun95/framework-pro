@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author : niejun
- * @description: arthas 定位CPU过高和线程死锁
+ * @description arthas 定位CPU过高和线程死锁
  * @date : 2022年10月16日 9:46
  **/
 @RestController

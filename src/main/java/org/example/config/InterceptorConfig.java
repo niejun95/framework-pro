@@ -7,11 +7,11 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * @ClassName 拦截器配置
- * @Author niejun
- * @Date 2022/6/15
- * @Description:
- * @Version 1.0
+ * @className 拦截器配置
+ * @author niejun
+ * @date 2022/6/15
+ * @description
+ * @version 1.0
  **/
 @Configuration
 public class InterceptorConfig implements WebMvcConfigurer {

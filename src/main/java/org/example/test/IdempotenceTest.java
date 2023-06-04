@@ -16,7 +16,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 /**
  * @author : niejun
- * @Description: 幂等性测试
+ * @description 幂等性测试
  * @date Date : 2022年08月07日 15:35
  **/
 @SpringBootTest

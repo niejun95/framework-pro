@@ -7,10 +7,10 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 
 /**
- * @description: 校验实体
- * @author: ryan
+ * @description 校验实体
+ * @author ryan
  * @date 2023/4/27 9:18
- * @version: 1.0
+ * @version 1.0
  */
 @Data
 public class ValidUser {

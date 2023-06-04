@@ -16,11 +16,11 @@ import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @ClassName TestDistributeLockDemo
- * @Author niejun
- * @Date 2022/6/30
- * @Description: 分布式锁demo
- * @Version 1.0
+ * @className TestDistributeLockDemo
+ * @author niejun
+ * @date 2022/6/30
+ * @description 分布式锁demo
+ * @version 1.0
  **/
 @RequestMapping("/redis")
 @RestController

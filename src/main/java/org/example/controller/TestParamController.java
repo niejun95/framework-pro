@@ -9,11 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @ClassName TestParamController
- * @Author niejun
- * @Date 2022/6/10
- * @Description:
- * @Version 1.0
+ * @className TestParamController
+ * @author niejun
+ * @date 2022/6/10
+ * @description
+ * @version 1.0
  **/
 @RestController
 @RequestMapping("/testParam")

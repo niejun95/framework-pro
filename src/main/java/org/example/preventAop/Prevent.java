@@ -3,11 +3,11 @@ package org.example.preventAop;
 import java.lang.annotation.*;
 
 /**
- * @ClassName: Prevent
- * @Author: ryan
+ * @className: Prevent
+ * @author ryan
  * @CreateTime: 2022-10-10  11:12
- * @Description: 接口防刷 注解
- * @Version: 1.0
+ * @description 接口防刷 注解
+ * @version 1.0
  */
 @Documented
 @Target({ElementType.METHOD})

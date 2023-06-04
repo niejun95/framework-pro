@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * @author : niejun
- * @Description: 操作 redis 中 bigkey
+ * @description 操作 redis 中 bigkey
  * @date Date : 2022年07月06日 21:17
  **/
 @RestController

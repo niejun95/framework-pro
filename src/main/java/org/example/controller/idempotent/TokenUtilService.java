@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @author : niejun
- * @Description: Token 工具类
+ * @description Token 工具类
  * @date Date : 2022年08月07日 15:09
  **/
 @Service

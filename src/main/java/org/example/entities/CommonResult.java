@@ -8,10 +8,10 @@ import lombok.Setter;
 import java.io.Serializable;
 
 /**
- * @description: 通用返回结果
- * @author: ryan
+ * @description 通用返回结果
+ * @author ryan
  * @date 2023/4/27 10:13
- * @version: 1.0
+ * @version 1.0
  */
 @Getter
 @Setter

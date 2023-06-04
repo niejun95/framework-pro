@@ -18,11 +18,11 @@ import java.time.LocalDate;
 import java.util.*;
 
 /**
- * @ClassName TestDateTimeController
- * @Author niejun
- * @Date 2022/6/21
- * @Description: mybatis mysql 时间类型
- * @Version 1.0
+ * @className TestDateTimeController
+ * @author niejun
+ * @date 2022/6/21
+ * @description mybatis mysql 时间类型
+ * @version 1.0
  **/
 @RestController
 @RequestMapping("/db")

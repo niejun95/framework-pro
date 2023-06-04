@@ -16,10 +16,10 @@ import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 
 /**
- * @description: 全局异常处理
- * @author: ryan
+ * @description 全局异常处理
+ * @author ryan
  * @date 2023/4/27 10:30
- * @version: 1.0
+ * @version 1.0
  */
 @ControllerAdvice
 @Slf4j

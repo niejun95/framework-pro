@@ -14,7 +14,7 @@ import org.springframework.context.annotation.DependsOn;
 
 /**
  * @author : niejun
- * @Description: Druid 监控配置
+ * @description Druid 监控配置
  * @date Date : 2022年06月26日 11:53
  **/
 @Configuration

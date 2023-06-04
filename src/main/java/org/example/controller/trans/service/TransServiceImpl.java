@@ -6,11 +6,11 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * @ClassName: TransServiceImpl
- * @Author: ryan
+ * @className: TransServiceImpl
+ * @author ryan
  * @CreateTime: 2022-07-25  15:40
- * @Description: 事务测试
- * @Version: 1.0
+ * @description 事务测试
+ * @version 1.0
  */
 @Service
 public class TransServiceImpl implements TransService{

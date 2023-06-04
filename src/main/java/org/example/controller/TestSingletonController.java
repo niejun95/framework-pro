@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @ClassName: TestSingletonController
- * @Author: niejun
+ * @className: TestSingletonController
+ * @author niejun
  * @CreateTime: 2022-07-18  15:34
- * @Description: 测试 spring 中单例
- * @Version: 1.0
+ * @description 测试 spring 中单例
+ * @version 1.0
  */
 @RestController
 @RequestMapping("/testSingleton")

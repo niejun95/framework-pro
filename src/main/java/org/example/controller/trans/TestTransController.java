@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @ClassName: TestMessController
- * @Author: niejun
+ * @className: TestMessController
+ * @author niejun
  * @CreateTime: 2022-07-25  15:36
- * @Description: TestMessController
- * @Version: 1.0
+ * @description TestMessController
+ * @version 1.0
  */
 @RestController
 @RequestMapping("/trans")

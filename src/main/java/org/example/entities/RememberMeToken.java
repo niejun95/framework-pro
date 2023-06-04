@@ -9,10 +9,10 @@ import lombok.Data;
 import java.util.Date;
 
 /**
- * @description:
- * @author: ryan
+ * @description
+ * @author ryan
  * @date 2023/4/25 14:11
- * @version: 1.0
+ * @version 1.0
  */
 @Data
 @AllArgsConstructor

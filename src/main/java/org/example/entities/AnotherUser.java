@@ -3,11 +3,11 @@ package org.example.entities;
 import java.util.Date;
 
 /**
- * @ClassName: AnotherUser
- * @Author: niejun
+ * @className: AnotherUser
+ * @author niejun
  * @CreateTime: 2022-07-28  10:14
- * @Description: AnotherUser
- * @Version: 1.0
+ * @description AnotherUser
+ * @version 1.0
  */
 public class AnotherUser {
 

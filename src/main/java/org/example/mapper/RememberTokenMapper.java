@@ -5,10 +5,10 @@ import org.apache.ibatis.annotations.Mapper;
 import org.example.entities.RememberMeToken;
 
 /**
- * @description:
- * @author: ryan
+ * @description
+ * @author ryan
  * @date 2023/4/25 14:15
- * @version: 1.0
+ * @version 1.0
  */
 @Mapper
 public interface RememberTokenMapper extends BaseMapper<RememberMeToken> {

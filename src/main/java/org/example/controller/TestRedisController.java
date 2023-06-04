@@ -15,11 +15,11 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @ClassName TestRedisController
- * @Author niejun
- * @Date 2022/6/7
- * @Description: redis 测试
- * @Version 1.0
+ * @className TestRedisController
+ * @author niejun
+ * @date 2022/6/7
+ * @description redis 测试
+ * @version 1.0
  **/
 @RestController
 @RequestMapping("/redis")

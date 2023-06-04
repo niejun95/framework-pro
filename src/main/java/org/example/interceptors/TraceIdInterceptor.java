@@ -12,11 +12,11 @@ import java.util.Date;
 import java.util.UUID;
 
 /**
- * @ClassName TraceIdInterceptor
- * @Author ryan
- * @Date 2022/6/15
- * @Description: 日志全局跟踪号
- * @Version 1.0
+ * @className TraceIdInterceptor
+ * @author ryan
+ * @date 2022/6/15
+ * @description 日志全局跟踪号
+ * @version 1.0
  **/
 public class TraceIdInterceptor implements HandlerInterceptor {
     private static final String TRACE_ID = "TRACE_ID";

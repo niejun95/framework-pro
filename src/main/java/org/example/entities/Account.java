@@ -3,11 +3,11 @@ package org.example.entities;
 import java.util.Date;
 
 /**
- * @ClassName Account
- * @Author niejun
- * @Date 2022/6/15
- * @Description: 账户实体类
- * @Version 1.0
+ * @className Account
+ * @author niejun
+ * @date 2022/6/15
+ * @description 账户实体类
+ * @version 1.0
  **/
 public class Account {
     private Integer id;

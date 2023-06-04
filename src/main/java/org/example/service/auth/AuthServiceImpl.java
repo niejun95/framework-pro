@@ -26,10 +26,10 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @description: 登录功能实现类
- * @author: ryan
+ * @description 登录功能实现类
+ * @author ryan
  * @date 2023/4/25 9:33
- * @version: 1.0
+ * @version 1.0
  */
 @Service
 @Slf4j
