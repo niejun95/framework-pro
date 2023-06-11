@@ -3,9 +3,9 @@ package org.example.preventAop;
 import java.lang.annotation.*;
 
 /**
- * @className: Prevent
+ * @className Prevent
  * @author ryan
- * @CreateTime: 2022-10-10  11:12
+ * @createTime 2022-10-10  11:12
  * @description 接口防刷 注解
  * @version 1.0
  */

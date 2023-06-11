@@ -1,9 +1,9 @@
 package org.example.entities;
 
 /**
- * @author : niejun
+ * @author niejun
  * @description Area
- * @date Date : 2022年06月30日 22:04
+ * @date 2022年06月30日 22:04
  **/
 public class Area {
     private Integer id;

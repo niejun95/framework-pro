@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @className: TestMessController
+ * @className TestMessController
  * @author niejun
- * @CreateTime: 2022-07-25  15:36
+ * @createTime 2022-07-25  15:36
  * @description TestMessController
  * @version 1.0
  */

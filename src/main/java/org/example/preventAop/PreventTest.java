@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @className: PreventTest
+ * @className PreventTest
  * @author ryan
- * @CreateTime: 2022-10-10  13:46
+ * @createTime 2022-10-10  13:46
  * @description 防刷测试
  * @version 1.0
  */

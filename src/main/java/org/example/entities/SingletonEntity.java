@@ -3,9 +3,9 @@ package org.example.entities;
 import org.springframework.stereotype.Component;
 
 /**
- * @className: SingletonEntity
+ * @className SingletonEntity
  * @author niejun
- * @CreateTime: 2022-07-18  15:36
+ * @createTime 2022-07-18  15:36
  * @description 用于测试单例的实体类
  * @version 1.0
  */

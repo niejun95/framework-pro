@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 /**
- * @className: SelfInterceptor
+ * @className SelfInterceptor
  * @author ryan
- * @CreateTime: 2022-10-19  16:00
+ * @createTime 2022-10-19  16:00
  * @description 请求报文打印拦截器
  * @version 1.0
  */

@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @className: TestSingletonController
+ * @className TestSingletonController
  * @author niejun
- * @CreateTime: 2022-07-18  15:34
+ * @createTime 2022-07-18  15:34
  * @description 测试 spring 中单例
  * @version 1.0
  */

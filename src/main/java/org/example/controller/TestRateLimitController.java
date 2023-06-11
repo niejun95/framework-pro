@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @className: TestRateLimit
+ * @className TestRateLimit
  * @author ryan
- * @CreateTime: 2022-08-16  16:11
+ * @createTime 2022-08-16  16:11
  * @description 测试 限流
  * @version 1.0
  */

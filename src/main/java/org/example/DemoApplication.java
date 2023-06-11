@@ -8,9 +8,9 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
- * @author : niejun
+ * @author niejun
  * @description 启动类
- * @date Date : 2022年06月06日 22:42
+ * @date 2022年06月06日 22:42
  **/
 @MapperScan("org.example.mapper") //扫描的mapper
 @SpringBootApplication

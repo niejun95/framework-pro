@@ -13,9 +13,9 @@ import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author : niejun
+ * @author niejun
  * @description Token 工具类
- * @date Date : 2022年08月07日 15:09
+ * @date 2022年08月07日 15:09
  **/
 @Service
 public class TokenUtilService {

@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * @author : niejun
+ * @author niejun
  * @description 操作 redis 中 bigkey
- * @date Date : 2022年07月06日 21:17
+ * @date 2022年07月06日 21:17
  **/
 @RestController
 @RequestMapping("/bigkey")

@@ -21,9 +21,9 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @className: TestWatchDogController
+ * @className TestWatchDogController
  * @author ryan
- * @CreateTime: 2022-09-23  09:00
+ * @createTime 2022-09-23  09:00
  * @description 手动实现看门狗机制
  * @version 1.0
  */

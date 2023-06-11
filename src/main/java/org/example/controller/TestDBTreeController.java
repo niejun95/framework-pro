@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * @author : niejun
+ * @author niejun
  * @description 树形结构 数据库查询
- * @date Date : 2022年06月30日 22:03
+ * @date 2022年06月30日 22:03
  **/
 @RequestMapping
 @RestController

@@ -6,9 +6,9 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * @className: TransServiceImpl
+ * @className TransServiceImpl
  * @author ryan
- * @CreateTime: 2022-07-25  15:40
+ * @createTime 2022-07-25  15:40
  * @description 事务测试
  * @version 1.0
  */

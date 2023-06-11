@@ -16,9 +16,9 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @className: RedisRateLimitUtil
+ * @className RedisRateLimitUtil
  * @author ryan
- * @CreateTime: 2022-08-16  10:49
+ * @createTime 2022-08-16  10:49
  * @description 限流工具类
  * @version 1.0
  */

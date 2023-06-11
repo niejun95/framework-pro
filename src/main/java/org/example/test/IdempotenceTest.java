@@ -15,9 +15,9 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 /**
- * @author : niejun
+ * @author niejun
  * @description 幂等性测试
- * @date Date : 2022年08月07日 15:35
+ * @date 2022年08月07日 15:35
  **/
 @SpringBootTest
 @RunWith(SpringRunner.class)

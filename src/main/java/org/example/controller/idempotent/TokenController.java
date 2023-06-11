@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author : niejun
+ * @author niejun
  * @description token 幂等测试 controller 类
- * @date Date : 2022年08月07日 15:26
+ * @date 2022年08月07日 15:26
  **/
 @RestController
 public class TokenController {

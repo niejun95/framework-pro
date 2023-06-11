@@ -5,9 +5,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author : niejun
+ * @author niejun
  * @description Druid 日志配置
- * @date Date : 2022年06月26日 14:06
+ * @date 2022年06月26日 14:06
  **/
 @Configuration
 public class DruidLogConfig {

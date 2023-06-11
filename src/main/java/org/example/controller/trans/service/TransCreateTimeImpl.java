@@ -10,9 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Date;
 
 /**
- * @className: TransCreateTimeImpl
+ * @className TransCreateTimeImpl
  * @author ryan
- * @CreateTime: 2022-10-17  13:54
+ * @createTime 2022-10-17  13:54
  * @description TODO
  * @version 1.0
  */

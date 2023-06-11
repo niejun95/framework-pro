@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * @className: TestReadController
+ * @className TestReadController
  * @author ryan
- * @CreateTime: 2022-08-31  22:27
+ * @createTime 2022-08-31  22:27
  * @description 读取 配置文件中 信息
  * @version 1.0
  */

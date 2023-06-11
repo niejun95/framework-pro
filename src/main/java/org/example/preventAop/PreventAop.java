@@ -19,9 +19,9 @@ import java.util.Base64;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @className: PreventAop
+ * @className PreventAop
  * @author ryan
- * @CreateTime: 2022-10-10  11:17
+ * @createTime 2022-10-10  11:17
  * @description 接口防刷 切面
  * @version 1.0
  */

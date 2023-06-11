@@ -4,9 +4,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @className: CharSwitchUtil
+ * @className CharSwitchUtil
  * @author ryan
- * @CreateTime: 2023-02-08  13:26
+ * @createTime 2023-02-08  13:26
  * @description TODO
  * @version 1.0
  */
