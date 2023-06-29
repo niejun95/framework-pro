@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 /**
- * @className SelfInterceptor
  * @author ryan
+ * @version 1.0
+ * @className SelfInterceptor
  * @createTime 2022-10-19  16:00
  * @description 请求报文打印拦截器
- * @version 1.0
  */
 public class RequestBodyLogInterceptor implements HandlerInterceptor {
     public static final Logger log = LogManager.getLogger(RequestBodyLogInterceptor.class);
@@ -23,9 +23,9 @@ public class RequestBodyLogInterceptor implements HandlerInterceptor {
     public boolean preHandle(@NotNull HttpServletRequest request, @NotNull HttpServletResponse response, @NotNull Object handler)
             throws Exception {
         String requestURI = request.getRequestURI();
-        log.info("当前访问的URI：{}", requestURI);
+        log.info("URI：{}", requestURI);
         Map<String, String[]> map = request.getParameterMap();
-        log.info("请求参数信息：\n {}", JSON.toJSONString(map));
+        log.info("Parameters：\n {}", JSON.toJSONString(map));
         return true;
     }
 }
