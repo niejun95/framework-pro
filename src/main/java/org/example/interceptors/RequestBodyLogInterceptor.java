@@ -1,16 +1,17 @@
 package org.example.interceptors;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.serializer.SerializerFeature;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.aspectj.weaver.ast.Var;
+
+import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Map;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.stream.Collectors;
 
 /**
@@ -20,15 +21,15 @@ import java.util.stream.Collectors;
  * @createTime 2022-10-19  16:00
  * @description 请求报文打印拦截器
  */
+@Slf4j
 public class RequestBodyLogInterceptor implements HandlerInterceptor {
-    public static final Logger log = LogManager.getLogger(RequestBodyLogInterceptor.class);
 
     public boolean preHandle(@NotNull HttpServletRequest request, @NotNull HttpServletResponse response, @NotNull Object handler)
             throws Exception {
         String requestURI = request.getRequestURI();
-        log.info("URI：{}", requestURI);
+        log.info("Request URI：{}", requestURI);
         String body = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
-        log.info("Body：\n {}", body);
+        log.info("Request Body：\n {}", body);
         return true;
     }
 }
