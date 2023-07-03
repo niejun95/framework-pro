@@ -7,9 +7,11 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.example.constants.CacheConstants;
 import org.example.entities.Result;
 import org.example.utils.ServletUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,6 +28,9 @@ import java.time.Duration;
 public class RepeatSubmitAspect {
 
     private static final ThreadLocal<String> KEY_CACHE = new ThreadLocal<>();
+
+    @Value("${token.header}")
+    private String header;
 
     @Autowired
     private StringRedisTemplate redisTemplate;
@@ -46,15 +51,13 @@ public class RepeatSubmitAspect {
 
         // 请求地址（作为存放 cache 的 key 值）
         String url = request.getRequestURI();
-
         // 唯一值（没有消息头则使用请求地址）
-        String submitKey = request.getHeader("token");
-
+        String submitKey = trimToEmpty(request.getHeader(header));
         // submitKye to md5
         submitKey = MD5.create().digestHex(submitKey + ":" + nowParams);
 
         // 唯一标识（指定key + url + 消息头）
-        String cacheRepeatKey = "global:repeat_submit:" + url + submitKey;
+        String cacheRepeatKey = CacheConstants.GLOBAL_REPEAT_SUBMIT_KEY + url + submitKey;
         String key = redisTemplate.opsForValue().get(cacheRepeatKey);
         if (key == null) {
             redisTemplate.opsForValue().set(cacheRepeatKey, "", Duration.ofMillis(interval));
@@ -66,7 +69,6 @@ public class RepeatSubmitAspect {
             }
             throw new RuntimeException(message);
         }
-
     }
 
     @AfterReturning(pointcut = "@annotation(repeatSubmit)", returning = "jsonResult")
@@ -83,5 +85,9 @@ public class RepeatSubmitAspect {
                 KEY_CACHE.remove();
             }
         }
+    }
+
+    private String trimToEmpty(String str) {
+        return str == null ? "" : str.trim();
     }
 }
