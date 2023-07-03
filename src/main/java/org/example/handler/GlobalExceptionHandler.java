@@ -16,10 +16,10 @@ import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 
 /**
- * @description 全局异常处理
  * @author ryan
- * @date 2023/4/27 10:30
  * @version 1.0
+ * @description 全局异常处理
+ * @date 2023/4/27 10:30
  */
 @ControllerAdvice
 @Slf4j
@@ -82,7 +82,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = Exception.class)
     public CommonResult exceptionHandler(HttpServletRequest request, Exception exception) {
         log.error("[exceptionHandler]", exception);
-        return CommonResult.error(ServiceExceptionEnum.SYS_ERROR.getCode(), ServiceExceptionEnum.SYS_ERROR.getMessage());
+        return CommonResult.error(ServiceExceptionEnum.SYS_ERROR.getCode(), ServiceExceptionEnum.SYS_ERROR.getMessage() + ",异常信息为：" + exception.getMessage());
 
     }
 }

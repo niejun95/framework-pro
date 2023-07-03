@@ -1,6 +1,7 @@
 package org.example.entities;
 
 import cn.hutool.core.lang.Assert;
+import cn.hutool.http.HttpStatus;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +17,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 public class CommonResult<T> implements Serializable {
-    public static Integer CODE_SUCCESS = 0;
+    public static Integer CODE_SUCCESS = HttpStatus.HTTP_OK;
 
     private Integer code;
 

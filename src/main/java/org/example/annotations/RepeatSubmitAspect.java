@@ -5,14 +5,16 @@ import cn.hutool.http.HttpStatus;
 import com.alibaba.fastjson.JSON;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.example.constants.CacheConstants;
-import org.example.entities.Result;
+import org.example.entities.CommonResult;
 import org.example.utils.ServletUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.Duration;
@@ -25,6 +27,7 @@ import java.time.Duration;
  * @date 2023/07/01 21:52:04
  */
 @Aspect
+@Component
 public class RepeatSubmitAspect {
 
     private static final ThreadLocal<String> KEY_CACHE = new ThreadLocal<>();
@@ -73,18 +76,27 @@ public class RepeatSubmitAspect {
 
     @AfterReturning(pointcut = "@annotation(repeatSubmit)", returning = "jsonResult")
     public void doAfterReturning(JoinPoint joinPoint, RepeatSubmit repeatSubmit, Object jsonResult) {
-        if (jsonResult instanceof Result) {
-            Result r = (Result) jsonResult;
-            try {
+        try {
+            if (jsonResult instanceof CommonResult) {
+                CommonResult r = (CommonResult) jsonResult;
                 // 成功则不删除 redis 数据 保证在有效时间内无法重复提交
                 if (r.getCode() == HttpStatus.HTTP_OK) {
                     return;
+                } else {
+                    // 抛出了异常 被 GlobalExceptionHandler 进行封装了 需要删除缓存
+                    redisTemplate.delete(KEY_CACHE.get());
                 }
-                redisTemplate.delete(KEY_CACHE.get());
-            } finally {
-                KEY_CACHE.remove();
             }
+        } finally {
+            KEY_CACHE.remove();
         }
+    }
+
+    @AfterThrowing(pointcut = "@annotation(RepeatSubmit)", throwing = "ex")
+    public void doAfterThrowing(Throwable ex) {
+        // 执行失败
+        redisTemplate.delete(KEY_CACHE.get());
+        KEY_CACHE.remove();
     }
 
     private String trimToEmpty(String str) {

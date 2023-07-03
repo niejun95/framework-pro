@@ -4,16 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
- * @description 异常枚举
  * @author ryan
- * @date 2023/4/27 10:25
  * @version 1.0
+ * @description 异常枚举
+ * @date 2023/4/27 10:25
  */
 @Getter
 @AllArgsConstructor
 public enum ServiceExceptionEnum {
     SUCCESS(0, "成功"),
-    SYS_ERROR(2001001000, "服务端发送异常"),
+    SYS_ERROR(2001001000, "服务端发生异常"),
 
     MISSING_REQUEST_PARAM_ERROR(2001001001, "参数丢失"),
     INVALID_REQUEST_PARAM_ERROR(2001001002, "请求参数不合法"),
