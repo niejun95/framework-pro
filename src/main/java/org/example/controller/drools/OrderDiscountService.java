@@ -13,7 +13,7 @@ public class OrderDiscountService {
 
     public OrderDiscount getDiscount(OrderRequest orderRequest) {
         OrderDiscount orderDiscount = new OrderDiscount();
-        // 开启绘画
+        // 开启会话
         KieSession kieSession = kieContainer.newKieSession();
         // 设置折扣对象
         kieSession.setGlobal("orderDiscount", orderDiscount);
@@ -21,7 +21,7 @@ public class OrderDiscountService {
         kieSession.insert(orderRequest);
         // 触发规则
         kieSession.fireAllRules();
-        // 终止会话
+        // 中止会话
         kieSession.dispose();
         return orderDiscount;
     }
