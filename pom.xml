@@ -168,26 +168,6 @@
             <artifactId>degrade</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
-        <!-- drools start-->
-        <dependency>
-            <groupId>org.drools</groupId>
-            <artifactId>drools-core</artifactId>
-            <version>7.59.0.Final</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.drools</groupId>
-            <artifactId>drools-compiler</artifactId>
-            <version>7.59.0.Final</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.drools</groupId>
-            <artifactId>drools-decisiontables</artifactId>
-            <version>7.59.0.Final</version>
-        </dependency>
-        <!-- drools end -->
     </dependencies>
 
     <profiles>
