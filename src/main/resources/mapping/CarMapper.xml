@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mapper.CarMapper">
+
+    <select id="selectByMultiCondition" resultType="org.example.entities.Car">
+        select * from car
+        <where> <!-- where标签会自动剔除掉多余的and -->
+            <if test="brand != null and brand != ''">
+                brand like concat('%', #{brand}, '%')
+            </if>
+            <if test="guidePrice != null and guidePrice !=''">
+                and guide_price > #{guidePrice}
+            </if>
+            <if test="carType != null and carType != ''">
+                and car_type = #{carType}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateById">
+        update car
+        set car_name    = #{carName},
+            brand       = #{brand},
+            guide_price = #{guidePrice},
+            car_type    = #{carType}
+        where id = #{id}
+    </update>
+
+    <update id="updateBySet">
+        update car
+        <set>
+            <if test="carName != null and carName !=''">car_name = #{carName},</if>
+            <if test="brand != null and brand !=''">brand = #{brand},</if>
+            <if test="guidePrice != null and guidePrice !=''">guide_price = #{guidePrice},</if>
+            <if test="carType != null and carType !=''">car_type = #{carType}</if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <insert id="insertBatch">
+        insert into car values
+        <foreach collection="cars" item="car" separator=",">
+            (null,#{car.carName},#{car.brand},#{car.guidePrice},#{car.carType})
+        </foreach>
+    </insert>
+
+    <delete id="deleteByIds">
+        <!--第一种方法-->
+        delete from car where id in(
+        <foreach collection="ids" item="id" separator=",">
+            #{id}
+        </foreach>
+        )
+        <!--第二种方法
+        delete from car where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+        -->
+
+        <!--第三种方法：使用or的形式
+        delete from car where
+        <foreach collection="ids" item="id" separator="or">
+            id=#{id}
+        </foreach>
+        -->
+    </delete>
+
+    <!--重复的代码抽取出来-->
+    <sql id="carColumnNameSql">
+        id
+        ,
+            car_name as carName,
+            brand,
+            guide_price as guidePrice,
+            car_type as carType
+    </sql>
+    <!--代码复用-->
+    <select id="selectAll" resultType="org.example.entities.Car">
+        select
+        <include refid="carColumnNameSql"/>
+        from car;
+    </select>
+</mapper>
