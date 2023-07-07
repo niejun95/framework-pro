@@ -67,8 +67,8 @@ public class TestDistributeLockDemo {
         // redis 查询加锁的信息 hgetall product_101
         String lockKey = "product_101";
         RLock lock =  redisson.getLock(lockKey);
+        lock.lock();
         try {
-            lock.lock();
             int stock  = Integer.parseInt(redisTemplate.opsForValue().get("stock"));
             if (stock > 0) {
                 int realStock = stock - 1;
