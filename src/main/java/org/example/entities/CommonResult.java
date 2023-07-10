@@ -5,6 +5,8 @@ import cn.hutool.http.HttpStatus;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
+import org.example.constants.CommonConstants;
+import org.slf4j.MDC;
 
 import java.io.Serializable;
 
@@ -23,6 +25,8 @@ public class CommonResult<T> implements Serializable {
 
     private String message;
 
+    private String traceId;
+
     private T data;
 
     public static <T> CommonResult<T> error(CommonResult<?> result) {
@@ -31,10 +35,11 @@ public class CommonResult<T> implements Serializable {
 
     public static <T> CommonResult<T> error(Integer code, String message) {
         Assert.isTrue(!CODE_SUCCESS.equals(code), "code 必须是错误的！");
-        CommonResult<T> commonResult = new CommonResult<>();
-        commonResult.code = code;
-        commonResult.message = message;
-        return commonResult;
+        CommonResult<T> result = new CommonResult<>();
+        result.code = code;
+        result.message = message;
+        result.traceId = MDC.get(CommonConstants.TRACE_ID);
+        return result;
     }
 
     public static <T> CommonResult<T> success(T data) {
@@ -42,6 +47,7 @@ public class CommonResult<T> implements Serializable {
         result.code = CODE_SUCCESS;
         result.data = data;
         result.message = "";
+        result.traceId = MDC.get(CommonConstants.TRACE_ID);
         return result;
     }
 
