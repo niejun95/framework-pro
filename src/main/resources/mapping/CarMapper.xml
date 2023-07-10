@@ -68,12 +68,11 @@
 
     <!--重复的代码抽取出来-->
     <sql id="carColumnNameSql">
-        id
-        ,
-            car_name as carName,
-            brand,
-            guide_price as guidePrice,
-            car_type as carType
+        id as id,
+        car_name as carName,
+        brand,
+        guide_price as guidePrice,
+        car_type as carType
     </sql>
     <!--代码复用-->
     <select id="selectAll" resultType="org.example.entities.Car">
