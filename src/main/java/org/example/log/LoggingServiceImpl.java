@@ -21,8 +21,8 @@ public class LoggingServiceImpl implements LoggingService {
         Map<String, Object> requestMap = new LinkedHashMap<>();
 
         Map<String, String> parameters = buildParametersMap(httpServletRequest);
-        requestMap.put("method", httpServletRequest.getMethod().toString());
-        requestMap.put("path", httpServletRequest.getRequestURI().toString());
+        requestMap.put("method", httpServletRequest.getMethod());
+        requestMap.put("path", httpServletRequest.getRequestURI());
         requestMap.put("traceId", MDC.get(CommonConstants.TRACE_ID));
         if (!parameters.isEmpty()) {
             requestMap.put("requestParameters", parameters);
@@ -41,8 +41,8 @@ public class LoggingServiceImpl implements LoggingService {
         Map<String, Object> responseLog = new LinkedHashMap<>();
         Map<String, Object> responseMap = new LinkedHashMap<>();
 
-        responseMap.put("method", httpServletRequest.getMethod().toString());
-        responseMap.put("path", httpServletRequest.getRequestURI().toString());
+        responseMap.put("method", httpServletRequest.getMethod());
+        responseMap.put("path", httpServletRequest.getRequestURI());
         responseMap.put("traceId", MDC.get(CommonConstants.TRACE_ID));
         responseMap.put("responseHeaders", buildHeadersMap(httpServletResponse));
         responseMap.put("responseBody", body);

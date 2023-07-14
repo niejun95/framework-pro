@@ -87,7 +87,7 @@ public class CacheService {
         String value = this.get(key);
         List<V> result = Collections.emptyList();
         if (!StringUtils.isEmpty(value)) {
-            result = JSONArray.parseArray(value, clazz);
+            result = JSON.parseArray(value, clazz);
         }
         return result;
     }
