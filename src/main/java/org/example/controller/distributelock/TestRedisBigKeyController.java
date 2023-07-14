@@ -1,6 +1,6 @@
 package org.example.controller.distributelock;
 
-import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson2.JSON;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.example.entities.User;
@@ -51,7 +51,7 @@ public class TestRedisBigKeyController {
         String s1 = "123";
         String s2 = "345";
         String s3 = "123";
-        redisTemplate.opsForList().leftPushAll("key2",s1, s2, s3);
+        redisTemplate.opsForList().leftPushAll("key2", s1, s2, s3);
 
         redisTemplate.opsForList().remove("key2", 1, "345");
 

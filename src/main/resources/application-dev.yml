@@ -1,5 +1,5 @@
 server:
-  port: 4888
+  port: 10010
   address:
 
 spring:

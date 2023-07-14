@@ -1,6 +1,6 @@
 package org.example.controller;
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONObject;
 import org.example.entities.Area;
 import org.example.mapper.AreaMapper;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,6 @@
 package org.example.controller.fastjson;
 
-import com.alibaba.fastjson.annotation.JSONType;
+import com.alibaba.fastjson2.annotation.JSONType;
 
 @JSONType(serializeEnumAsJavaBean = true)
 public enum SeasonEnum {

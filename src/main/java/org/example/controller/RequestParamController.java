@@ -1,6 +1,6 @@
 package org.example.controller;
 
-import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson2.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.example.entities.Account;
 import org.example.entities.Result;
