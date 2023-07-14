@@ -1,14 +1,15 @@
 package org.example.log;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import lombok.extern.slf4j.Slf4j;
+import org.example.constants.CommonConstants;
+import org.slf4j.MDC;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Collection;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Slf4j
 @Service
@@ -16,36 +17,38 @@ public class LoggingServiceImpl implements LoggingService {
 
     @Override
     public void logRequest(HttpServletRequest httpServletRequest, Object body) {
-        StringBuilder builder = new StringBuilder();
+        Map<String, Object> requestLog = new LinkedHashMap<>();
+        Map<String, Object> requestMap = new LinkedHashMap<>();
+
         Map<String, String> parameters = buildParametersMap(httpServletRequest);
-        builder.append("\n");
-        builder.append("REQUEST { \n");
-        builder.append("    method= ").append(httpServletRequest.getMethod()).append("\n");
-        builder.append("    path= ").append(httpServletRequest.getRequestURI()).append("\n");
-        //builder.append("    headers= ").append(buildHeadersMap(httpServletRequest)).append("\n");
-
+        requestMap.put("method", httpServletRequest.getMethod().toString());
+        requestMap.put("path", httpServletRequest.getRequestURI().toString());
+        requestMap.put("traceId", MDC.get(CommonConstants.TRACE_ID));
         if (!parameters.isEmpty()) {
-            builder.append("    parameters= ").append(parameters).append("\n");
+            requestMap.put("requestParameters", parameters);
         }
+        requestMap.put("requestHeaders", buildHeadersMap(httpServletRequest));
         if (body != null) {
-            builder.append("    body= " + body + "\n");
+            requestMap.put("requestBody", body);
         }
-        builder.append("} \n");
+        requestLog.put("请求报文", requestMap);
 
-        log.info(builder.toString());
+        log.info(JSON.toJSONString(requestLog, SerializerFeature.PrettyFormat));
     }
 
     @Override
     public void logResponse(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object body) {
-        StringBuilder builder = new StringBuilder();
-        builder.append("\n");
-        builder.append("RESPONSE { \n");
-        builder.append("    method= ").append(httpServletRequest.getMethod()).append("\n");
-        builder.append("    path= ").append(httpServletRequest.getRequestURI()).append("\n");
-        //builder.append("    responseHeaders= ").append(buildHeadersMap(httpServletResponse)).append("\n");
-        builder.append("    responseBody= ").append(body).append("\n");
-        builder.append("} \n");
-        log.info(builder.toString());
+        Map<String, Object> responseLog = new LinkedHashMap<>();
+        Map<String, Object> responseMap = new LinkedHashMap<>();
+
+        responseMap.put("method", httpServletRequest.getMethod().toString());
+        responseMap.put("path", httpServletRequest.getRequestURI().toString());
+        responseMap.put("traceId", MDC.get(CommonConstants.TRACE_ID));
+        responseMap.put("responseHeaders", buildHeadersMap(httpServletResponse));
+        responseMap.put("responseBody", body);
+        responseLog.put("响应报文", responseMap);
+
+        log.info(JSON.toJSONString(responseLog, SerializerFeature.PrettyFormat));
     }
 
     private Map<String, String> buildParametersMap(HttpServletRequest httpServletRequest) {

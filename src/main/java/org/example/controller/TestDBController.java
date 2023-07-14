@@ -1,6 +1,5 @@
 package org.example.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.example.entities.Account;
@@ -19,11 +18,11 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @className TestDBController
  * @author niejun
+ * @version 1.0
+ * @className TestDBController
  * @date 2022/6/15
  * @description 数据库 测试
- * @version 1.0
  **/
 @RestController
 @RequestMapping("/db")
@@ -45,14 +44,14 @@ public class TestDBController {
     private AccountService accountService;
 
     @RequestMapping("/userQ/{name}")
-    public String queryUserInfoByName(@PathVariable String name) {
+    public Account queryUserInfoByName(@PathVariable String name) {
         log.info("name=" + name);
         Account account = accountMapper.queryAccountInfoByName(name);
         //Account account = accountService.queryAccountInfoByNameForResultMap(name);
         String lowIncomeFlag = account.getLowIncomeFlag();
         System.out.println("lowIncomeFlag 是否为空呢？" + Objects.isNull(lowIncomeFlag));
         log.info("结果：{}", account);
-        return JSONObject.toJSONString(account);
+        return account;
     }
 
 
@@ -110,14 +109,14 @@ public class TestDBController {
     }
 
     @RequestMapping("/testIf")
-    public void testIf(){
+    public void testIf() {
         Account account1 = new Account();
         account1.setId(456);
         accountMapper.testIf(account1);
     }
 
     @RequestMapping("/cache/{name}")
-    public String queryUserInfoByName1(@PathVariable String name) {
+    public Account queryUserInfoByName1(@PathVariable String name) {
         log.info("name=" + name);
         Account account = accountMapper.queryAccountInfoByName(name);
         log.info("结果：{}", account);
@@ -125,6 +124,6 @@ public class TestDBController {
         Account account1 = accountMapper.queryAccountInfoByName(name);
         log.info("结果1：{}", account1);
 
-        return JSONObject.toJSONString(account);
+        return account;
     }
 }

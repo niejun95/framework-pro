@@ -23,9 +23,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new TraceIdInterceptor());
-        //registry.addInterceptor(new RequestBodyLogInterceptor())
-        //        .addPathPatterns("/**");
+        registry.addInterceptor(new TraceIdInterceptor()).addPathPatterns("/**");
         registry.addInterceptor(logInterceptor).addPathPatterns("/**");
     }
 
