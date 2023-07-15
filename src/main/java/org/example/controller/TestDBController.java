@@ -6,6 +6,7 @@ import org.example.entities.Account;
 import org.example.mapper.AccountMapper;
 import org.example.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -125,5 +126,10 @@ public class TestDBController {
         log.info("结果1：{}", account1);
 
         return account;
+    }
+
+    @GetMapping("/query")
+    public void queryInfo() {
+        log.info("会不会进行包装呢");
     }
 }
