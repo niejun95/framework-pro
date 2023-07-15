@@ -1,4 +1,4 @@
-package org.example.controller;
+package org.example.controller.gerneral;
 
 import org.example.entities.Account;
 import org.example.mapper.AccountMapper;

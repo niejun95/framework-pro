@@ -1,4 +1,4 @@
-package org.example.controller;
+package org.example.controller.gerneral;
 
 import org.example.service.auth.AuthService;
 import org.springframework.web.bind.annotation.GetMapping;

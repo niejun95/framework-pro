@@ -1,6 +1,6 @@
 package org.example;
 
-import org.example.controller.TestSingletonController;
+import org.example.controller.gerneral.TestSingletonController;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

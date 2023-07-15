@@ -1,4 +1,4 @@
-package org.example.controller;
+package org.example.controller.gerneral;
 
 import com.alibaba.fastjson2.JSONObject;
 import org.example.entities.Area;

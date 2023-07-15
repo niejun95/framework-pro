@@ -1,5 +1,6 @@
 package org.example.log;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.HttpInputMessage;
@@ -20,13 +21,14 @@ public class CustomRequestBodyAdviceAdapter extends RequestBodyAdviceAdapter {
     HttpServletRequest httpServletRequest;
 
     @Override
-    public boolean supports(MethodParameter methodParameter, Type type, Class<? extends HttpMessageConverter<?>> aClass) {
+    public boolean supports(@NotNull MethodParameter methodParameter, @NotNull Type type, @NotNull Class<? extends HttpMessageConverter<?>> aClass) {
         return true;
     }
 
+    @NotNull
     @Override
-    public Object afterBodyRead(Object body, HttpInputMessage inputMessage, MethodParameter parameter, Type targetType,
-                                Class<? extends HttpMessageConverter<?>> converterType) {
+    public Object afterBodyRead(@NotNull Object body, @NotNull HttpInputMessage inputMessage, @NotNull MethodParameter parameter, @NotNull Type targetType,
+                                @NotNull Class<? extends HttpMessageConverter<?>> converterType) {
         loggingService.logRequest(httpServletRequest, body);
         return super.afterBodyRead(body, inputMessage, parameter, targetType, converterType);
     }

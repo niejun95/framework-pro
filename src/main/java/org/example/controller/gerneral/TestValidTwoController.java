@@ -1,4 +1,4 @@
-package org.example.controller;
+package org.example.controller.gerneral;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.entities.ValidUser;

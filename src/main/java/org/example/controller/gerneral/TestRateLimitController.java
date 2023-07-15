@@ -1,4 +1,4 @@
-package org.example.controller;
+package org.example.controller.gerneral;
 
 import org.example.utils.RedisRateLimitUtil;
 import org.springframework.beans.factory.annotation.Autowired;
