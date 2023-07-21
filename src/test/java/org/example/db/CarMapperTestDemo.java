@@ -1,4 +1,4 @@
-package org.example;
+package org.example.db;
 
 import org.example.entities.Car;
 import org.example.mapper.CarMapper;
