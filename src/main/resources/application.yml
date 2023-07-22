@@ -1,9 +1,53 @@
 spring:
   profiles:
-    active: @package.environment@
+    active: @profiles.active@
   main:
     lazy-initialization: true
 
+  aop:
+    proxy-target-class: false # springboot 默认使用cglib进行动态代理 设置为 false 使用jdk动态代理
+
+  redis:
+    host: 43.143.1.90
+    port: 6379
+    database: 0
+
+    lettuce:
+      pool:
+        # 连接池最大阻塞等待时间（使用负值表示没有限制） 默认 -1
+        max-wait: 60s
+        # 连接池中的最大空闲连接 默认 8
+        max-idle: 10
+        # 连接池中的最小空闲连接 默认 0
+        min-idle: 10
+        # 连接池最大连接数（使用负值表示没有限制） 默认 8
+        max-active: 8
+
+  datasource:
+    druid: # 定义数据库连接池所需要的相关配置项
+      initial-size: 5 # 初始化连接池大小
+      min-idle: 10 # 最小维持的连接池大小
+      max-active: 50 # 最大可提供的连接数量
+      max-wait: 60000 # 最长等待时间
+      time-between-eviction-runs-millis: 6000 # 关闭空闲连接间隔（毫秒）
+      min-evictable-idle-time-millis: 30000 # 连接最小的生存时间
+      validation-query: SELECT 1 FROM dual # 数据库的状态检测
+      test-while-idle: true # 判断连接是否可用
+      test-on-borrow: false # 在获得连接之前是否进行测试
+      test-on-return: false # 归还连接前是否需要进行测试
+      pool-prepared-statements: false # 不缓存PSTMT
+      max-pool-prepared-statement-per-connection-size: 20 # 配置PSTMT缓存个数
+      filters: stat, log4j2
+      filter:
+        stat:
+          enabled: true
+          merge-sql: true
+          log-slow-sql: true
+          slow-sql-millis: 2000
+        wall:
+          enabled: false
+        log4j2:
+          enabled: true
 
 jwt:
   publicKey: MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDQgEoj3z9JrdPNI23DbMQkl3gkGuDke7iBr5yrYyqolkTyxuBLWFwHNuGv4VKOj9fXg61QxpaJ/fxDBvMvmkBSRowHBloGFceVTx8wV/8u0DcjvTCu0IZ1zp6wjG6xBn5j66Sg/q+9hvaY2p7fkKmsvcW6VoNPgQHU1Cf01DLZmQIDAQAB+oXcINOiE3AsuZ4VJmwNZg9Y/7fY+OFRS2JAh5YMsrv2qyoGP+Z9ksre26NYR+Lt91B2lhdwJHLpQpziaANZm/ONb31fj/lwIDAQAB
@@ -11,3 +55,14 @@ jwt:
 
 token:
   header: token
+
+mybatis-plus:
+  mapper-locations: classpath:mapping/**Mapper.xml
+  type-aliases-package: org.example.entities
+
+##showSql
+logging:
+  level:
+    org:
+      example:
+        mapper: debug

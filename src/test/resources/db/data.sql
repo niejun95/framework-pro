@@ -1,0 +1,1 @@
+insert into student (student_name, age, sex, email) values ('lucy', 28, '0', 'lucy@gmail.com')

@@ -1,5 +1,6 @@
 package org.example.db;
 
+import com.alibaba.fastjson2.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.example.entities.Student;
 import org.example.mapper.StudentMapper;
@@ -8,6 +9,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.List;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 @Slf4j
+@Sql("/db/schema.sql")
 public class MyBatisPlusTest {
 
     @Autowired
@@ -36,5 +39,14 @@ public class MyBatisPlusTest {
         student.setAge(18);
         int result = studentMapper.insert(student);
         Assert.assertEquals(result, 1);
+    }
+
+    @Test
+    @Sql({"/db/schema.sql", "/db/data.sql"}) // 会覆盖方法级别的脚本
+    public void useSelectAnnotation() {
+        List<Student> students = studentMapper.queryStudentAgeBigThanParam(28);
+        students.forEach(student -> {
+            log.info("student info {}", JSON.toJSONString(student));
+        });
     }
 }
