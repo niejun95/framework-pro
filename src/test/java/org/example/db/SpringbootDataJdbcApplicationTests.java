@@ -1,4 +1,4 @@
-package org.example.entities;
+package org.example.db;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.junit.jupiter.api.Test;
