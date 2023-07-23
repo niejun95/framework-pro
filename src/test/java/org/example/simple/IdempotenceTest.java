@@ -1,4 +1,4 @@
-package org.example.test;
+package org.example.simple;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -34,7 +34,7 @@ public class IdempotenceTest {
         MockMvc mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
         // 调用获取 token 结果
         String token = mockMvc.perform(MockMvcRequestBuilders.get("/token")
-                .accept(MediaType.TEXT_HTML))
+                        .accept(MediaType.TEXT_HTML))
                 .andReturn()
                 .getResponse().getContentAsString();
         log.info("获取 token 的串：{}", token);
@@ -43,8 +43,8 @@ public class IdempotenceTest {
             log.info("第{}次调用测试接口", i);
             // 调用验证结果并打印结果
             String result = mockMvc.perform(MockMvcRequestBuilders.post("/test")
-                    .header("token", token)
-                    .accept(MediaType.TEXT_HTML))
+                            .header("token", token)
+                            .accept(MediaType.TEXT_HTML))
                     .andReturn().getResponse().getContentAsString();
             log.info(result);
             // 结果断言

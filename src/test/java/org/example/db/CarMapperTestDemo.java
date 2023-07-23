@@ -6,6 +6,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
@@ -14,6 +16,8 @@ import java.util.List;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
+@Sql({"/db/schema-car.sql", "/db/data-car.sql"})
+@ActiveProfiles("local")
 public class CarMapperTestDemo {
 
     @Autowired
@@ -50,6 +54,9 @@ public class CarMapperTestDemo {
         Car car = new Car(2L, null, "奔驰C200", null, "新能源");
         int count = carMapper.updateBySet(car);
         System.out.println(count);
+
+        car = new Car(2L, "比亚迪e3", "奔驰C200", BigDecimal.valueOf(136800L), "");
+        carMapper.updateBySet(car);
     }
 
     @Test
