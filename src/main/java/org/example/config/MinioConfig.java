@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MinioConfig {
 
-    private static final String END_POINT = "http://43.143.1.90:39000";
+    private static final String END_POINT = "http://43.143.1.90:9091";
 
     private static final String USERNAME = "minioadmin";
     private static final String PASSWORD = "minioadmin";
