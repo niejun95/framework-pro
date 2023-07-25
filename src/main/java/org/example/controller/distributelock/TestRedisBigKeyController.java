@@ -28,8 +28,8 @@ public class TestRedisBigKeyController {
 
     @RequestMapping("/setBigKey")
     public String setBigKey() {
-        User user = User.builder().id(243).name("小萌").age(18).build();
-        User ryan = User.builder().id(456).name("ryan").age(27).build();
+        User user = User.builder().id(243L).userName("小萌").age(18).build();
+        User ryan = User.builder().id(456L).userName("ryan").age(27).build();
         redisTemplate.opsForList().leftPushAll("key1", user, ryan);
         return "redis 设置 bigkey list类型成功";
 

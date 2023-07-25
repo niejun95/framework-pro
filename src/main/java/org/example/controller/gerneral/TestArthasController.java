@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/arthas")
 public class TestArthasController {
-    public static final Logger log = LogManager.getLogger(TestDateTimeController.class);
+    public static final Logger log = LogManager.getLogger(TestArthasController.class);
 
     public static final Object obj1 = new Object();
     public static final Object obj2 = new Object();

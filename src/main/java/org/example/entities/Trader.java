@@ -1,8 +1,6 @@
 package org.example.entities;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
-import org.example.controller.databaseEncrypt.EncryptTypeHandler;
 
 /**
  * @description:

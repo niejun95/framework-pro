@@ -52,7 +52,7 @@ public class TestRedisController {
 
     @RequestMapping("/addJsonString")
     public String addJsonString() {
-        User user = User.builder().id(123).name("小萌").age(27).build();
+        User user = User.builder().id(123L).userName("小萌").age(27).build();
         cacheService.add(user.getId(), user);
         log.info("将对象转换成jsonString并存入redis");
         return "将对象转换成jsonString并存入redis";
@@ -61,7 +61,7 @@ public class TestRedisController {
     @RequestMapping("/addJsonStringExpire")
     public String addJsonStringExpire() {
         ArrayList<User> users = new ArrayList<>();
-        User user = User.builder().id(243).name("小萌").age(18).build();
+        User user = User.builder().id(243L).userName("小萌").age(18).build();
         users.add(user);
         cacheService.add("key", users, 1, TimeUnit.HOURS);
         log.info("将对象集合转换成jsonString，并设置过期时间存入至redis");

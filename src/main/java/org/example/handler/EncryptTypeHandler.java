@@ -1,4 +1,4 @@
-package org.example.controller.databaseEncrypt;
+package org.example.handler;
 
 import jodd.util.StringUtil;
 import org.apache.ibatis.type.BaseTypeHandler;
@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * @description:
+ * @description: 加解密处理 randomKey 应该通过读取配置文件获取较为合适
  * @author: ryan
  * @date 2023/6/9 16:44
  * @version: 1.0
@@ -39,7 +39,6 @@ public class EncryptTypeHandler<T> extends BaseTypeHandler<T> {
     public T getNullableResult(ResultSet rs, int columnIndex) throws SQLException {
         String columnValue = rs.getString(columnIndex);
         return StringUtil.isBlank(columnValue) ? null : (T) AESUtil.decrypt(columnValue, randomKey);
-
     }
 
     @Override

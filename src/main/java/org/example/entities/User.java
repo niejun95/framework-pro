@@ -1,83 +1,42 @@
 package org.example.entities;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.example.handler.EncryptTypeHandler;
+
 import java.io.Serializable;
 
 /**
- * @className User
  * @author niejun
+ * @version 1.0
+ * @className User
  * @date 2022/6/7
  * @description
- * @version 1.0
  **/
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@TableName(value = "user", autoResultMap = true)
 public class User implements Serializable {
 
-    private Integer id;
+    private Long id;
 
-    private String name;
+    private String userName;
+
+    @TableField(typeHandler = EncryptTypeHandler.class)
+    private String password;
+
+    private Integer gender;
 
     private Integer age;
 
-    public Integer getId() {
-        return id;
-    }
+    private String address;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    private String idNo;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public static UserBuilder builder() {
-        return new UserBuilder();
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
-
-    public static class UserBuilder {
-        private User user;
-
-        public UserBuilder() {
-            this.user = new User();
-        }
-
-        public UserBuilder id(Integer id) {
-            user.setId(id);
-            return this;
-        }
-
-        public UserBuilder age(Integer age) {
-            user.setAge(age);
-            return this;
-        }
-
-        public UserBuilder name(String name) {
-            user.setName(name);
-            return this;
-        }
-
-        public User build() {
-            return user;
-        }
-    }
 }

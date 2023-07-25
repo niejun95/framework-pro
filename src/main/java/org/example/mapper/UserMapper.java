@@ -1,21 +1,9 @@
 package org.example.mapper;
 
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.example.entities.AnotherUser;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.example.entities.User;
 import org.springframework.stereotype.Repository;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-
-@Mapper
 @Repository
-public interface UserMapper {
-    List<AnotherUser> queryUserByCreateTime(Map map);
-
-    int insertNewUser(@Param("requestParam") Map requestParam);
-
-    Date queryGmtCreateTime();
+public interface UserMapper extends BaseMapper<User> {
 }

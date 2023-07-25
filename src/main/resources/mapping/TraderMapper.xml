@@ -6,20 +6,20 @@
         <result column="id" jdbcType="BIGINT" property="id"/>
         <result column="name" jdbcType="VARCHAR" property="name"/>
         <result column="phone" jdbcType="VARCHAR" property="phone"
-                typeHandler="org.example.controller.databaseEncrypt.EncryptTypeHandler"/>
+                typeHandler="org.example.handler.EncryptTypeHandler"/>
         <result column="id_card" jdbcType="VARCHAR" property="idCard"
-                typeHandler="org.example.controller.databaseEncrypt.EncryptTypeHandler"/>
+                typeHandler="org.example.handler.EncryptTypeHandler"/>
         <result column="bank_card" jdbcType="VARCHAR" property="bankCard"
-                typeHandler="org.example.controller.databaseEncrypt.EncryptTypeHandler"/>
+                typeHandler="org.example.handler.EncryptTypeHandler"/>
         <result column="address" jdbcType="VARCHAR" property="address"/>
     </resultMap>
 
     <insert id="simpleInsert" parameterType="org.example.entities.Trader">
         insert into trader (name, phone, id_card, bank_card, address)
         values (#{name},
-                #{phone,javaType=String,jdbcType=VARCHAR,typeHandler=org.example.controller.databaseEncrypt.EncryptTypeHandler},
-                #{idCard,javaType=String,jdbcType=VARCHAR,typeHandler=org.example.controller.databaseEncrypt.EncryptTypeHandler},
-                #{bankCard,javaType=String,jdbcType=VARCHAR,typeHandler=org.example.controller.databaseEncrypt.EncryptTypeHandler},
+                #{phone,javaType=String,jdbcType=VARCHAR,typeHandler=org.example.handler.EncryptTypeHandler},
+                #{idCard,javaType=String,jdbcType=VARCHAR,typeHandler=org.example.handler.EncryptTypeHandler},
+                #{bankCard,javaType=String,jdbcType=VARCHAR,typeHandler=org.example.handler.EncryptTypeHandler},
                 #{address})
     </insert>
 
