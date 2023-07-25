@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.handler.EncryptTypeHandler;
+import org.example.handler.GenderTypeHandler;
 
 import java.io.Serializable;
 
@@ -31,7 +32,8 @@ public class User implements Serializable {
     @TableField(typeHandler = EncryptTypeHandler.class)
     private String password;
 
-    private Integer gender;
+    @TableField(typeHandler = GenderTypeHandler.class)
+    private String gender;
 
     private Integer age;
 

@@ -3,9 +3,7 @@ package org.example.controller.gerneral;
 import cn.hutool.core.util.DesensitizedUtil;
 import org.example.entities.User;
 import org.example.mapper.UserMapper;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author ryan
@@ -23,22 +21,14 @@ public class DesensitizationController {
         this.userMapper = userMapper;
     }
 
-    @GetMapping("/add")
-    public void add() {
-        User user = User.builder()
-                .userName("ryan")
-                .password("123456")
-                .age(18)
-                .gender(1)
-                .address("上海市浦东新区黄山路1990号")
-                .idNo("340827199511206311")
-                .build();
+    @PostMapping("/add")
+    public void add(@RequestBody User user) {
         userMapper.insert(user);
     }
 
-    @GetMapping("/get")
-    public User get() {
-        User user = userMapper.selectById(1L);
+    @GetMapping("/get/{id}")
+    public User get(@PathVariable Long id) {
+        User user = userMapper.selectById(id);
         user.setPassword(DesensitizedUtil.password(user.getPassword()));
         user.setIdNo(DesensitizedUtil.idCardNum(user.getIdNo(), 3, 2));
         return user;

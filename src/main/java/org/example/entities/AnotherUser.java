@@ -1,14 +1,19 @@
 package org.example.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
 /**
- * @className AnotherUser
  * @author niejun
+ * @version 1.0
+ * @className AnotherUser
  * @createTime 2022-07-28  10:14
  * @description AnotherUser
- * @version 1.0
  */
+@Getter
+@Setter
 public class AnotherUser {
 
     private Integer id;
@@ -18,36 +23,4 @@ public class AnotherUser {
     private Date gmtCreate;
 
     private Date gmtModified;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Date getGmtCreate() {
-        return gmtCreate;
-    }
-
-    public void setGmtCreate(Date gmtCreate) {
-        this.gmtCreate = gmtCreate;
-    }
-
-    public Date getGmtModified() {
-        return gmtModified;
-    }
-
-    public void setGmtModified(Date gmtModified) {
-        this.gmtModified = gmtModified;
-    }
 }

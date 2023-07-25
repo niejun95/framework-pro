@@ -1,34 +1,22 @@
 package org.example.entities;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 /**
- * @className SingletonEntity
  * @author niejun
+ * @version 1.0
+ * @className SingletonEntity
  * @createTime 2022-07-18  15:36
  * @description 用于测试单例的实体类
- * @version 1.0
  */
 @Component
+@Getter
+@Setter
 public class SingletonEntity {
 
     private String name;
 
     private Integer age;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
 }

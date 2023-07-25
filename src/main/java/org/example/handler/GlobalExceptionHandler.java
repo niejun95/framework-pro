@@ -2,7 +2,7 @@ package org.example.handler;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.entities.CommonResult;
-import org.example.entities.ServiceExceptionEnum;
+import org.example.enums.ServiceExceptionEnum;
 import org.springframework.validation.BindException;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;

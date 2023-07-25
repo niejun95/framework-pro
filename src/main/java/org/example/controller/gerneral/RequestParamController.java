@@ -3,7 +3,7 @@ package org.example.controller.gerneral;
 import com.alibaba.fastjson2.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.example.entities.Account;
-import org.example.entities.Result;
+import org.example.entities.CommonResult;
 import org.example.mapper.AccountMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -49,11 +49,11 @@ public class RequestParamController {
     }
 
     @GetMapping("/all")
-    public Result queryAll() {
+    public CommonResult queryAll() {
         List<Account> accounts = mapper.queryAll();
-        Result result = new Result();
+        CommonResult result = new CommonResult();
         result.setCode(200);
-        result.setMsg("success");
+        result.setMessage("success");
         result.setData(accounts);
         return result;
     }
