@@ -66,3 +66,8 @@ logging:
     org:
       example:
         mapper: debug
+
+minio:
+  endpoint: http://43.143.1.90:9091
+  accessKey: minioadmin
+  secretKey: minioadmin
