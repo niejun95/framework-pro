@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mapper.SysUserMapper">
+
+    <insert id="insert" parameterType="org.example.entities.SysUser">
+        insert into sys_user(id, username, realname, create_time, update_time)
+            values (#{id}, #{username}, #{realname}, #{createTime}, #{updateTime})
+    </insert>
+
+    <select id="list" resultType="org.example.entities.SysUser">
+        select * from sys_user
+    </select>
+
+    <update id="update" parameterType="org.example.entities.SysUser">
+        update sys_user
+        set username = #{username}, realname = #{realname}, update_time = #{updateTime}
+        where id = #{id}
+    </update>
+
+</mapper>
