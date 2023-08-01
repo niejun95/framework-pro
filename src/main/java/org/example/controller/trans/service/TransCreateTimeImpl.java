@@ -1,7 +1,6 @@
 package org.example.controller.trans.service;
 
 import org.example.mapper.AccountMapper;
-import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -23,6 +22,7 @@ public class TransCreateTimeImpl implements TransCreateTime{
     AccountMapper accountMapper;
 
     @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRED)
+    @Override
     public void updateCreateTime() {
         System.out.println("更新时间");
         accountMapper.updateDate(new Date());

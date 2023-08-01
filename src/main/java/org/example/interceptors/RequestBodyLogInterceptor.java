@@ -4,14 +4,9 @@ package org.example.interceptors;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.web.servlet.HandlerInterceptor;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.stream.Collectors;
 
 /**
@@ -24,6 +19,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class RequestBodyLogInterceptor implements HandlerInterceptor {
 
+    @Override
     public boolean preHandle(@NotNull HttpServletRequest request, @NotNull HttpServletResponse response, @NotNull Object handler)
             throws Exception {
         String requestURI = request.getRequestURI();

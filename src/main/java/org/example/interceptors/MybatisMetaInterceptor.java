@@ -50,7 +50,7 @@ public class MybatisMetaInterceptor implements Interceptor {
                 if ("createTime".equals(field.getName())) {
                     field.setAccessible(true);
                     Object local_createDate = field.get(parameter);
-                    if (local_createDate == null || local_createDate.equals("")) {
+                    if (local_createDate == null || "".equals(local_createDate)) {
                         field.set(parameter, LocalDateTime.now());
                     }
                     field.setAccessible(false);
@@ -97,7 +97,7 @@ public class MybatisMetaInterceptor implements Interceptor {
      * 获取类的所有属性，包括父类
      *
      * @param object 对象
-     * @return
+     * @return Field[] 属性数组
      */
     public static Field[] getAllFields(Object object) {
         Class<?> clazz = object.getClass();

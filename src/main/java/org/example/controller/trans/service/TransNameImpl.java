@@ -20,6 +20,7 @@ public class TransNameImpl implements TransName{
     AccountMapper accountMapper;
 
     @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRES_NEW)
+    @Override
     public void updateName(){
         System.out.println("更新名字");
         accountMapper.updateName("zz");

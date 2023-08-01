@@ -21,16 +21,18 @@ import java.util.UUID;
  **/
 public class TraceIdInterceptor implements HandlerInterceptor {
 
-    private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+    private static final SimpleDateFormat SDF = new SimpleDateFormat("yyyyMMddHHmmss");
 
+    @Override
     public boolean preHandle(@NotNull HttpServletRequest request, @NotNull HttpServletResponse response, @NotNull Object handler)
             throws Exception {
         Date date = new Date();
-        String timePrefix = sdf.format(date);
+        String timePrefix = SDF.format(date);
         MDC.put(CommonConstants.TRACE_ID, timePrefix + UUID.randomUUID().toString().substring(0, 3));
         return true;
     }
 
+    @Override
     public void afterCompletion(@NotNull HttpServletRequest request, @NotNull HttpServletResponse response, @NotNull Object handler, @Nullable Exception ex) throws Exception {
         MDC.clear();
     }
