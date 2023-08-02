@@ -1,14 +1,9 @@
 package org.example.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 import org.example.entities.SysUser;
 
-import java.util.List;
-
-public interface SysUserMapper {
-
-    List<SysUser> list();
-
-    int insert(SysUser sysUser);
-
-    int update(SysUser sysUser);
+@Mapper
+public interface SysUserMapper extends BaseMapper<SysUser> {
 }
