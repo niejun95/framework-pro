@@ -1,7 +1,6 @@
 package org.example.utils;
 
 import com.alibaba.fastjson2.JSON;
-import com.alibaba.fastjson2.JSONArray;
 import com.alibaba.fastjson2.JSONObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,18 +9,15 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @className CacheService
  * @author niejun
+ * @version 1.0
+ * @className CacheService
  * @date 2022/6/7
  * @description
- * @version 1.0
  **/
 @Component
 public class CacheService {
@@ -71,7 +67,7 @@ public class CacheService {
     }
 
     public <K, SK> Object getHashCache(K key, SK subKey) {
-        return  redisTemplate.opsForHash().get(DEFAULT_KEY_PREFIX + key, subKey);
+        return redisTemplate.opsForHash().get(DEFAULT_KEY_PREFIX + key, subKey);
     }
 
     public <K, V> V getObject(K key, Class<V> clazz) {
@@ -164,4 +160,24 @@ public class CacheService {
     public void increment(String key) {
         redisTemplate.opsForValue().increment(key, 1);
     }
+
+    /**
+     * 清除所有的 key
+     */
+    public void clear() {
+        Set<String> keys = redisTemplate.keys("*");
+        if (!keys.isEmpty()) {
+            redisTemplate.delete(keys);
+        }
+    }
+
+    /**
+     * 根据通配符获取所有key
+     */
+    public Set<String> getKeysByPattern(String pattern) {
+        // 根据通配符获取所有匹配的key
+        Set<String> keys = redisTemplate.keys(pattern);
+        return keys;
+    }
+
 }
