@@ -71,3 +71,15 @@ minio:
   endpoint: http://43.143.1.90:9091
   accessKey: minioadmin
   secretKey: minioadmin
+
+xxl:
+  job:
+    admin:
+      address: http://localhost:8080/xxl-job-admin
+    executor:
+      appname: hresh-job-executor
+      ip:
+      port: 6666
+      logpath: E:\logs\xxl-job\xxl-job
+      logretentiondays: 30
+    accessToken: default-token
