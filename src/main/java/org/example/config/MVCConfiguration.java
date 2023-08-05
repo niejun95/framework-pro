@@ -3,9 +3,11 @@ package org.example.config;
 import com.alibaba.fastjson2.JSONWriter;
 import com.alibaba.fastjson2.support.config.FastJsonConfig;
 import com.alibaba.fastjson2.support.spring.http.converter.FastJsonHttpMessageConverter;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -15,11 +17,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @className CORSConfiguration
  * @author ryan
+ * @version 1.0
+ * @className CORSConfiguration
  * @createTime 2022-09-09  08:49
  * @description CORS & fastjson2
- * @version 1.0
  */
 @Configuration
 @EnableWebMvc
@@ -28,7 +30,7 @@ public class MVCConfiguration implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedOriginPatterns("*")
-                .allowedMethods("GET", "POST","PUT", "DELETE", "HEAD", "OPTIONS")
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS")
                 .allowCredentials(true)// 允许携带cookie
                 .maxAge(3600)// 设置有效期
                 .allowedHeaders("*");
@@ -76,4 +78,11 @@ public class MVCConfiguration implements WebMvcConfigurer {
 
         converters.add(converter);
     }
+
+
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+
 }

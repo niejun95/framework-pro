@@ -18,11 +18,17 @@ import org.springframework.web.client.RestTemplate;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author ryan
+ * @version 1.0.0
+ * @description xxl 工具类
+ * @date 2023/08/05 11:22:40
+ */
 @Component
 @RequiredArgsConstructor
 public class XxlUtil {
 
-    @Value("${xxl.job.admin.addresses}")
+    @Value("${xxl.job.admin.address}")
     private String xxlJobAdminAddress;
 
     private final RestTemplate restTemplate;
@@ -34,10 +40,6 @@ public class XxlUtil {
 
     /**
      * 添加任务
-     *
-     * @param xxlJobInfo
-     * @param appName
-     * @return
      */
     public String addJob(XxlJobInfo xxlJobInfo, String appName) {
         Map<String, Object> params = new HashMap<>();
@@ -52,7 +54,9 @@ public class XxlUtil {
         return doPost(xxlJobAdminAddress + ADD_INFO_URL, xxlJobInfoJson);
     }
 
-    // 删除job
+    /**
+     * 删除job
+     */
     public String removeJob(long jobId) {
         MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
         map.add("id", String.valueOf(jobId));
@@ -61,9 +65,6 @@ public class XxlUtil {
 
     /**
      * 远程调用
-     *
-     * @param url
-     * @param json
      */
     private String doPost(String url, String json) {
         HttpHeaders headers = new HttpHeaders();

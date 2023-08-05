@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class XxlJobConfig {
 
-    @Value("${xxl.job.admin.addresses}")
+    @Value("${xxl.job.admin.address}")
     private String adminAddresses;
     @Value("${xxl.job.executor.appname}")
     private String appName;

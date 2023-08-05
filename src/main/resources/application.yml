@@ -77,9 +77,9 @@ xxl:
     admin:
       address: http://localhost:8080/xxl-job-admin
     executor:
-      appname: hresh-job-executor
+      appname: ryan-job-executor
       ip:
       port: 6666
       logpath: E:\logs\xxl-job\xxl-job
       logretentiondays: 30
-    accessToken: default-token
+    accessToken: default_token
