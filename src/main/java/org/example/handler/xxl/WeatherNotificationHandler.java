@@ -20,7 +20,7 @@ public class WeatherNotificationHandler extends IJobHandler {
 
     @XxlJob(value = "weatherNotificationHandler")
     @Override
-    public void execute() throws Exception {
+    public void execute() {
         userService.pushWeatherNotification();
     }
 }

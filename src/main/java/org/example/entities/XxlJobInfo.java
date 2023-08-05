@@ -6,6 +6,12 @@ import lombok.Data;
 import java.util.Date;
 
 
+/**
+ * @author ryan
+ * @version 1.0.0
+ * @description xxl job info
+ * @date 2023/08/05 11:56:57
+ */
 @Data
 @Builder
 public class XxlJobInfo {

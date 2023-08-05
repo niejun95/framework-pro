@@ -5,6 +5,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * @author ryan
+ * @version 1.0.0
+ * @description xxl config
+ * @date 2023/08/05 11:57:07
+ */
 @Configuration
 public class XxlJobConfig {
 

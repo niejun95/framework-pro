@@ -21,7 +21,7 @@ public class SayHelloHandler {
     private final XxlUtil xxlUtil;
 
     @XxlJob(value = "sayHelloHandler")
-    public void execute() throws Exception {
+    public void execute() {
         String jobParam = XxlJobHelper.getJobParam();
         userService.sayHelloToUser(jobParam);
 

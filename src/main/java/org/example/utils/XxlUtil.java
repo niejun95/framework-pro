@@ -58,7 +58,7 @@ public class XxlUtil {
      * 删除job
      */
     public String removeJob(long jobId) {
-        MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
+        MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
         map.add("id", String.valueOf(jobId));
         return doPostWithFormData(xxlJobAdminAddress + REMOVE_INFO_URL, map);
     }
