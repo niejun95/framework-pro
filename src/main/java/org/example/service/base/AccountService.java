@@ -1,4 +1,4 @@
-package org.example.service;
+package org.example.service.base;
 
 import org.example.entities.Account;
 
