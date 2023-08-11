@@ -75,7 +75,7 @@ minio:
 xxl:
   job:
     admin:
-      address: http://localhost:8080/xxl-job-admin
+      address: http://43.143.1.90:8888/xxl-job-admin
     executor:
       appname: ryan-job-executor
       ip:
