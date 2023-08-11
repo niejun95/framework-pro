@@ -3,7 +3,7 @@ package org.example.service;
 import cn.hutool.core.date.DateUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.example.entities.XxlJobInfo;
+import org.example.entity.XxlJobInfo;
 import org.example.utils.XxlUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

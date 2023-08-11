@@ -1,8 +1,8 @@
 package org.example.controller.gerneral;
 
 import lombok.RequiredArgsConstructor;
-import org.example.entities.CommonResult;
-import org.example.entities.User;
+import org.example.entity.CommonResult;
+import org.example.entity.User;
 import org.example.service.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

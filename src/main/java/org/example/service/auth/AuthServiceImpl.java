@@ -84,13 +84,13 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public Account verifySmsCaptcha(String phone, String smsCaptcha) {
-        if (StringUtils.isEmpty(phone) || StringUtils.isEmpty(smsCaptcha)) {
+        if (StrUtil.isEmpty(phone) || StrUtil.isEmpty(smsCaptcha)) {
             log.error("手机号和验证码不能为空");
             throw new RuntimeException("手机号和验证码不能为空");
         }
         String captchaCheckTimeKey = AuthConstants.SMS_CODE_CHECK_TIME_PREFIX + phone;
         String captchaCheckTimeValue = (String) redisTemplate.opsForValue().get(captchaCheckTimeKey);
-        if (StringUtils.isEmpty(captchaCheckTimeValue)) {
+        if (StrUtil.isEmpty(captchaCheckTimeValue)) {
             log.error("验证码过期");
             throw new RuntimeException("验证码已过期");
         }
