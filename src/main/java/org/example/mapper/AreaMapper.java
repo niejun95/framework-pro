@@ -1,7 +1,7 @@
 package org.example.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.example.entities.Area;
+import org.example.entity.Area;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

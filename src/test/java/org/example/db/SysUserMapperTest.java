@@ -3,7 +3,7 @@ package org.example.db;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONWriter;
 import lombok.extern.slf4j.Slf4j;
-import org.example.entities.SysUser;
+import org.example.entity.SysUser;
 import org.example.mapper.SysUserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;

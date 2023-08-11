@@ -1,7 +1,8 @@
 package org.example.service;
 
-import org.example.entities.Student;
+import org.example.entity.Student;
 import org.example.mapper.StudentMapper;
+import org.example.service.base.StudentService;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

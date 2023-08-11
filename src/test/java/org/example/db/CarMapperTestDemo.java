@@ -1,6 +1,6 @@
 package org.example.db;
 
-import org.example.entities.Car;
+import org.example.entity.Car;
 import org.example.mapper.CarMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;

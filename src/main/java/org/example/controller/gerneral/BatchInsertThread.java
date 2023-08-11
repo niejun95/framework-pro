@@ -1,6 +1,6 @@
 package org.example.controller.gerneral;
 
-import org.example.entities.Account;
+import org.example.entity.Account;
 import org.example.mapper.AccountMapper;
 
 /**

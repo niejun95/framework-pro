@@ -1,6 +1,6 @@
 package org.example.service.auth;
 
-import org.example.entities.Account;
+import org.example.entity.Account;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

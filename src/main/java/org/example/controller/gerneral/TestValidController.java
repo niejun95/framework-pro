@@ -2,7 +2,7 @@ package org.example.controller.gerneral;
 
 import com.alibaba.fastjson2.JSON;
 import lombok.extern.slf4j.Slf4j;
-import org.example.entities.ValidUser;
+import org.example.entity.ValidUser;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

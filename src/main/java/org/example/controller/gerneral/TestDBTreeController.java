@@ -1,7 +1,7 @@
 package org.example.controller.gerneral;
 
 import com.alibaba.fastjson2.JSONObject;
-import org.example.entities.Area;
+import org.example.entity.Area;
 import org.example.mapper.AreaMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

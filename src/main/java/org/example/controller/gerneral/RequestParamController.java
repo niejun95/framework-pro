@@ -2,8 +2,8 @@ package org.example.controller.gerneral;
 
 import com.alibaba.fastjson2.JSON;
 import lombok.extern.slf4j.Slf4j;
-import org.example.entities.Account;
-import org.example.entities.CommonResult;
+import org.example.entity.Account;
+import org.example.entity.CommonResult;
 import org.example.mapper.AccountMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

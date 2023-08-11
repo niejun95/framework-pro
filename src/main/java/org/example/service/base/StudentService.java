@@ -1,8 +1,8 @@
-package org.example.service;
+package org.example.service.base;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.AllArgsConstructor;
-import org.example.entities.Student;
+import org.example.entity.Student;
 import org.example.mapper.StudentMapper;
 import org.springframework.stereotype.Service;
 
@@ -36,7 +36,6 @@ public class StudentService {
     public void deleteAllStudent() {
         studentMapper.delete(null);
     }
-
 
     public Student getStudentById(Long id) {
         return studentMapper.selectById(id);

@@ -5,7 +5,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.example.config.JwtConfig;
 import org.example.constants.AuthConstants;
-import org.example.entities.Account;
+import org.example.entity.Account;
 import org.springframework.stereotype.Component;
 import sun.misc.BASE64Decoder;
 

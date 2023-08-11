@@ -1,4 +1,4 @@
-package org.example.entities;
+package org.example.entity;
 
 import cn.hutool.core.lang.Assert;
 import cn.hutool.http.HttpStatus;
