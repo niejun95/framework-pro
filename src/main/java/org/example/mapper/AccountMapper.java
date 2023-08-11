@@ -1,7 +1,7 @@
 package org.example.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.example.entities.Account;
+import org.example.entity.Account;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;

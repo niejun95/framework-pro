@@ -1,7 +1,7 @@
 package org.example.service.trans;
 
 import lombok.RequiredArgsConstructor;
-import org.example.entities.Student;
+import org.example.entity.Student;
 import org.example.mapper.StudentMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

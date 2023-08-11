@@ -1,6 +1,6 @@
 package org.example.service.impl;
 
-import org.example.entities.Account;
+import org.example.entity.Account;
 import org.example.mapper.AccountMapper;
 import org.example.service.base.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;

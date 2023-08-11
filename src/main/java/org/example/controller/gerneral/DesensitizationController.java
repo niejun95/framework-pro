@@ -1,7 +1,7 @@
 package org.example.controller.gerneral;
 
 import cn.hutool.core.util.DesensitizedUtil;
-import org.example.entities.User;
+import org.example.entity.User;
 import org.example.mapper.UserMapper;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,4 +1,4 @@
-package org.example.entities;
+package org.example.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

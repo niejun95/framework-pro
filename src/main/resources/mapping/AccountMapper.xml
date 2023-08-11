@@ -13,7 +13,7 @@
         useCache属性在该情况下没有。
     <cache eviction="FIFO" flushInterval="60000" size="512" readOnly="true"/>
     -->
-    <resultMap id="account" type="org.example.entities.Account">
+    <resultMap id="account" type="org.example.entity.Account">
         <result column="id" jdbcType="INTEGER" property="id" />
         <result column="name" jdbcType="VARCHAR" property="name" />
         <result column="money" jdbcType="VARCHAR" property="money" />
@@ -21,7 +21,7 @@
         <result column="low_income_flag" jdbcType="VARCHAR" property="lowIncomeFlag"/>
     </resultMap>
 
-    <insert id="insertSingle" parameterType="org.example.entities.Account">
+    <insert id="insertSingle" parameterType="org.example.entity.Account">
         insert into account (id, name, money)
         values
         (#{id}, #{name}, #{money})
@@ -53,7 +53,7 @@
         where id = #{id}
     </delete>
 
-    <select id="queryAccountInfoByName" resultType="org.example.entities.Account" useCache="false">
+    <select id="queryAccountInfoByName" resultType="org.example.entity.Account" useCache="false">
         select id as id,
         name as name,
         money as money,
@@ -67,11 +67,11 @@
         from account where name = #{name}
     </select>
 
-    <select id="queryAccountByTime" resultType="org.example.entities.Account">
+    <select id="queryAccountByTime" resultType="org.example.entity.Account">
         <![CDATA[ select * from account where create_time < #{date} ]]>
     </select>
 
-    <update id="testIf" parameterType="org.example.entities.Account">
+    <update id="testIf" parameterType="org.example.entity.Account">
         update account
         <if test="id != null">
             set name = 'ryan'
@@ -88,7 +88,7 @@
         where id = 2
     </update>
 
-    <select id="queryAll" resultType="org.example.entities.Account">
+    <select id="queryAll" resultType="org.example.entity.Account">
         select id              as id,
                name            as name,
                money           as money,
@@ -97,7 +97,7 @@
         from account
     </select>
 
-    <select id="queryByPhone" resultType="org.example.entities.Account">
+    <select id="queryByPhone" resultType="org.example.entity.Account">
         select id              as id,
                name            as name,
                money           as money,

@@ -1,7 +1,7 @@
 package org.example.controller.event;
 
 import lombok.extern.slf4j.Slf4j;
-import org.example.entities.Account;
+import org.example.entity.Account;
 import org.example.mapper.AccountMapper;
 import org.springframework.stereotype.Service;
 

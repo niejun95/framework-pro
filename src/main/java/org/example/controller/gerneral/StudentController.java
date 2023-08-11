@@ -1,6 +1,6 @@
 package org.example.controller.gerneral;
 
-import org.example.entities.Student;
+import org.example.entity.Student;
 import org.example.service.base.StudentService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

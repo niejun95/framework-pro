@@ -1,6 +1,6 @@
 package org.example.controller.gerneral;
 
-import org.example.entities.Trader;
+import org.example.entity.Trader;
 import org.example.mapper.TraderMapper;
 import org.springframework.web.bind.annotation.*;
 

@@ -2,7 +2,7 @@ package org.example.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.example.entities.Car;
+import org.example.entity.Car;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;

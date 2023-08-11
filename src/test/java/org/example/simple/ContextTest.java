@@ -1,6 +1,6 @@
 package org.example.simple;
 
-import org.example.entities.Account;
+import org.example.entity.Account;
 import org.example.mapper.AccountMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,7 +1,7 @@
 package org.example.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.example.entities.User;
+import org.example.entity.User;
 import org.springframework.stereotype.Repository;
 
 @Repository

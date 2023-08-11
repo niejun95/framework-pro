@@ -2,7 +2,7 @@ package org.example.controller.gerneral;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.example.entities.User;
+import org.example.entity.User;
 import org.example.utils.CacheService;
 import com.alibaba.fastjson2.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;

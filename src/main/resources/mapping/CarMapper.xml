@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.example.mapper.CarMapper">
 
-    <select id="selectByMultiCondition" resultType="org.example.entities.Car">
+    <select id="selectByMultiCondition" resultType="org.example.entity.Car">
         select * from car
         <where> <!-- where标签会自动剔除掉多余的and -->
             <if test="brand != null and brand != ''">
@@ -75,7 +75,7 @@
         car_type as carType
     </sql>
     <!--代码复用-->
-    <select id="selectAll" resultType="org.example.entities.Car">
+    <select id="selectAll" resultType="org.example.entity.Car">
         select
         <include refid="carColumnNameSql"/>
         from car;

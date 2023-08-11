@@ -1,6 +1,6 @@
 package org.example.controller.event;
 
-import org.example.entities.CommonResult;
+import org.example.entity.CommonResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

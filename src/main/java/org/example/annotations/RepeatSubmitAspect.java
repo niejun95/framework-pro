@@ -9,7 +9,7 @@ import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.example.constants.CacheConstants;
-import org.example.entities.CommonResult;
+import org.example.entity.CommonResult;
 import org.example.utils.ServletUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
