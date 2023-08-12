@@ -68,7 +68,7 @@ logging:
         mapper: debug
 
 minio:
-  endpoint: http://43.143.1.90:9091
+  endpoint: http://43.143.1.90:9000
   accessKey: minioadmin
   secretKey: minioadmin
 
